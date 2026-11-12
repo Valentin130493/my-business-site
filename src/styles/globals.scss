@@ -1,27 +1,26 @@
 @use "./variables" as vars;
 
 :root {
-  --color-stone: #f6f5ef;
+  --color-stone: #f4f6f5;
   --color-paper: #ffffff;
-  --color-ink: #1f3633;
-  --color-muted: #5a6e6a;
-  --color-sea: #3f7f74;
-  --color-sea-deep: #2f6259;
-  --color-mint: #bfe6d8;
-  --color-butter: #f6e2a6;
-  --color-peach: #f7cfba;
-  --color-foam: #e4f1eb;
-  --color-line: #d9e2dd;
-  --color-sun: #f3d98f;
-  --color-online: #4fbf8a;
+  --color-ink: #15191a;
+  --color-muted: #565e61;
+  --color-sea: #1c2427;
+  --color-sea-deep: #2c3a3e;
+  --color-mint: #8edcc0;
+  --color-foam: #e3f4ee;
+  --color-line: #dde2e1;
+  --color-on-dark: #ffffff;
+  --color-on-dark-muted: #b9c4c1;
+  --color-dark-panel: #1f2a2d;
+  --color-online: #3bb273;
+  --color-chart-accent: #2a9d7c;
+  --color-chart-muted: #c9d0ce;
+  --color-chart-muted-dark: #3a4549;
+  --color-chart-grid: #e6eae9;
 
-  --gradient-primary: linear-gradient(135deg, var(--color-mint) 0%, var(--color-butter) 100%);
-  --gradient-soft: linear-gradient(135deg, #e3f4ec 0%, #fbf3dc 55%, #fbe4d8 100%);
-  --gradient-dark: linear-gradient(155deg, #213c38 0%, #2f4f49 60%, #3b5249 100%);
-  --gradient-text: linear-gradient(135deg, var(--color-sea-deep) 0%, #5d9c86 100%);
-
-  --shadow-soft: 0 24px 48px -28px rgba(31, 54, 51, 0.35);
-  --shadow-phone: 0 30px 60px -30px rgba(31, 54, 51, 0.5);
+  --shadow-soft: 0 24px 48px -32px rgba(21, 25, 26, 0.35);
+  --shadow-phone: 0 30px 60px -30px rgba(21, 25, 26, 0.5);
 
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
@@ -43,11 +42,6 @@ html {
 
 body {
   background-color: var(--color-stone);
-  background-image:
-    radial-gradient(60rem 40rem at 0% -8%, rgba(191, 230, 216, 0.6), transparent 70%),
-    radial-gradient(50rem 36rem at 100% 4%, rgba(246, 226, 166, 0.5), transparent 70%),
-    radial-gradient(48rem 34rem at 85% 48%, rgba(247, 207, 186, 0.28), transparent 70%);
-  background-repeat: no-repeat;
   color: var(--color-ink);
   font-family: vars.$font-family-base;
   font-size: 1.125rem;
@@ -57,6 +51,13 @@ body {
   @media (max-width: vars.$breakpoint-mobile) {
     font-size: 1.0625rem;
   }
+}
+
+// элементы до появления сдвинуты вниз анимацией — без clip они удлиняют
+// страницу, и у самого низа скролл дёргается, когда сдвиг пропадает
+main {
+  overflow: hidden;
+  overflow: clip;
 }
 
 img {
@@ -85,7 +86,7 @@ h3 {
 }
 
 h1 {
-  font-size: clamp(2.125rem, 5.2vw, 3.75rem);
+  font-size: clamp(2rem, 4.6vw, 3.5rem);
 }
 
 h2 {
@@ -106,6 +107,15 @@ p {
   outline: 3px solid var(--color-sea);
   outline-offset: 3px;
   border-radius: 6px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
 .skip-link {

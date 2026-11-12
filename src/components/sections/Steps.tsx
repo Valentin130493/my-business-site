@@ -11,7 +11,6 @@ type Step = { title: string; text: string };
 export async function Steps() {
   const t = await getTranslations();
   const items = t.raw("steps.items") as Step[];
-  const word = t("word");
   const headingId = headingIdOf(SECTION_ID_STEPS);
 
   return (
@@ -27,9 +26,7 @@ export async function Steps() {
         <ol className={styles.list}>
           {items.map((step, index) => (
             <li key={step.title} className={styles.step} {...revealProps(index)}>
-              <h3 className={styles.title}>
-                {step.title.replace("{word}", word)}
-              </h3>
+              <h3 className={styles.title}>{step.title}</h3>
               <p className={styles.text}>{step.text}</p>
             </li>
           ))}

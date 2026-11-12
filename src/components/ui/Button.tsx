@@ -1,6 +1,6 @@
 import styles from "./Button.module.scss";
 
-export type ButtonVariant = "primary" | "outline" | "dark";
+export type ButtonVariant = "primary" | "outline" | "accent" | "outlineLight";
 
 export function buttonClassName(
   variant: ButtonVariant = "primary",

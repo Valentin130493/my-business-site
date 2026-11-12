@@ -6,6 +6,7 @@ import { ContactMenu } from "@/components/ui/ContactMenu";
 import { Container } from "@/components/ui/Container";
 import { CONTACT_OPTIONS } from "@/constants/contacts";
 import {
+  SECTION_ID_CALC,
   SECTION_ID_HERO,
   SECTION_ID_PLANS,
   headingIdOf,
@@ -16,8 +17,6 @@ import styles from "./Hero.module.scss";
 
 export async function Hero() {
   const t = await getTranslations();
-  const word = t("word");
-  const facts = t.raw("hero.facts") as string[];
   const headingId = headingIdOf(SECTION_ID_HERO);
 
   return (
@@ -28,10 +27,12 @@ export async function Hero() {
     >
       <Container className={styles.grid}>
         <div>
+          <p className={styles.badge}>{t("hero.badge")}</p>
           <h1 id={headingId} className={styles.title}>
             {t("hero.title")}
           </h1>
           <p className={styles.lead}>{t("hero.lead")}</p>
+          <p className={styles.founder}>{t("hero.founderLine")}</p>
           <div className={styles.buttons}>
             <ContactMenu
               label={t("hero.ctaPrimary")}
@@ -43,12 +44,9 @@ export async function Hero() {
               {t("hero.ctaSecondary")}
             </ButtonLink>
           </div>
-          <p className={styles.note}>{t("hero.note", { word })}</p>
-          <ul className={styles.facts} aria-label={t("hero.factsLabel")}>
-            {facts.map((fact) => (
-              <li key={fact}>{fact}</li>
-            ))}
-          </ul>
+          <a href={`#${SECTION_ID_CALC}`} className={styles.calcLink}>
+            {t("hero.calcLink")}&nbsp;→
+          </a>
         </div>
 
         <ChatDemo

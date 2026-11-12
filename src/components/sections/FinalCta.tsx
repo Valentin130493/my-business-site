@@ -11,7 +11,6 @@ import styles from "./FinalCta.module.scss";
 
 export async function FinalCta() {
   const t = await getTranslations();
-  const word = t("word");
   const headingId = headingIdOf(SECTION_ID_CONTACT);
 
   return (
@@ -22,17 +21,19 @@ export async function FinalCta() {
     >
       <Container>
         <div className={styles.box} {...revealProps()}>
-          <h2 id={headingId} className={styles.heading}>
-            {t("final.heading")}
-          </h2>
-          <p className={styles.text}>{t("final.text", { word })}</p>
+          <div className={styles.content}>
+            <h2 id={headingId} className={styles.heading}>
+              {t("final.heading")}
+            </h2>
+            <p className={styles.text}>{t("final.text")}</p>
+          </div>
           {CONTACT_OPTIONS.length > 0 ? (
             <div className={styles.buttons}>
               {CONTACT_OPTIONS.map((contact, index) => (
                 <ContactButton
                   key={contact.channel}
                   contact={contact}
-                  className={buttonClassName(index === 0 ? "dark" : "outline")}
+                  className={buttonClassName(index === 0 ? "accent" : "outlineLight")}
                 >
                   {t(`final.${contact.channel}`)}
                 </ContactButton>

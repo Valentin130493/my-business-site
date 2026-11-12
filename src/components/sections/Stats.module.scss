@@ -1,0 +1,36 @@
+@use "@/styles/variables" as vars;
+
+.section {
+  padding-bottom: vars.$space-12;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: vars.$space-3;
+  list-style: none;
+
+  @media (min-width: vars.$breakpoint-desktop) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: vars.$space-4;
+  }
+}
+
+.item {
+  padding: vars.$space-5;
+  border: 1px solid var(--color-line);
+  border-radius: vars.$radius-sm;
+  background: var(--color-paper);
+}
+
+.value {
+  @include vars.display;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  line-height: 1.1;
+}
+
+.text {
+  margin-top: vars.$space-1;
+  font-size: 0.9375rem;
+  color: var(--color-muted);
+}

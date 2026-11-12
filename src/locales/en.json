@@ -9,6 +9,9 @@
     "skip": "Skip to content",
     "home": "Back to top",
     "chooseChannel": "Where would you like to message me?",
+    "calc": "Calculator",
+    "menu": "Open menu",
+    "closeMenu": "Close menu",
     "features": "About bots",
     "cases": "Projects",
     "plans": "Pricing",
@@ -19,19 +22,22 @@
     "write": "Message me",
     "languages": "Site language"
   },
-  "word": "AUDIT",
   "hero": {
     "title": "There are thousands of ready-made bots. I build one: for your business.",
     "lead": "It answers your customers in seconds, day and night, books appointments and collects requests. You get ready customers, not endless chats.",
-    "ctaPrimary": "Get a free audit",
+    "badge": "AI chatbots for small and medium businesses",
+    "founderLine": "I build every bot myself: 5+ years in development, my own AI chatbot engine and the website monitoring service Dumza.",
+    "ctaPrimary": "Discuss your bot",
     "ctaSecondary": "See prices",
-    "note": "Send “{word}” in DMs — I’ll look at your business and tell you what to automate first.",
-    "factsLabel": "About me in brief",
-    "facts": [
-      "Full-stack developer, 5+ years",
-      "My own AI chatbot engine",
-      "My own SaaS — dumza.com",
-      "An AI bot that runs a news channel by itself"
+    "calcLink": "Calculate how many customers you lose"
+  },
+  "stats": {
+    "label": "In brief",
+    "items": [
+      { "value": "5+ years", "text": "in development" },
+      { "value": "24/7", "text": "the bot replies without days off" },
+      { "value": "4 + website", "text": "Telegram, WhatsApp, Instagram and Messenger" },
+      { "value": "{startPrice}", "text": "first step — a business audit" }
     ]
   },
   "chat": {
@@ -50,6 +56,7 @@
     ]
   },
   "night": {
+    "eyebrow": "Sound familiar?",
     "heading": "While you’re busy or asleep, customers are writing",
     "items": [
       { "time": "23:40", "text": "Someone asked about prices. You replied in the morning, but they had already booked with whoever answered first." },
@@ -61,13 +68,13 @@
   "trend": {
     "eyebrow": "The trend of late 2026",
     "heading": "Big companies already work with AI agents. Small and medium businesses are next",
-    "lead": "AI agents are no longer an experiment: at big companies they answer customers, write code and take routine work off employees. Small businesses have barely moved — both McKinsey’s research and US statistics show it. Which means right now you can be the first in your niche.",
-    "statsLabel": "Figures from companies and research",
-    "stats": [
-      { "id": "mckinsey-large", "value": "40%", "text": "of large companies with revenue above $1 billion are scaling AI agents — up from 27% a year earlier", "source": "McKinsey, The state of AI 2026" },
-      { "id": "mckinsey-small", "value": "22%", "text": "among smaller companies — and this share hasn’t grown in a year", "source": "McKinsey, The state of AI 2026" },
-      { "id": "census", "value": "~20%", "text": "of US businesses use AI. The share is growing at larger firms but standing still at firms with fewer than 20 employees", "source": "U.S. Census Bureau, 2026" },
-      { "id": "klarna", "value": "2/3", "text": "of Klarna’s support chats were handled by an AI assistant in its very first month — the work of 700 agents", "source": "Klarna, 2024" }
+    "lead": "AI agents are no longer an experiment: they answer customers, write code and take routine work off employees. The market is multiplying, big companies are already scaling agents, and small and medium businesses are only starting. Which means right now you can be the first in your niche.",
+    "market": { "title": "Global AI agents market", "unit": "$ billion", "forecast": "forecast", "source": "MarketsandMarkets" },
+    "smb": { "title": "Small and medium businesses already trying or using AI", "growing": "Growing companies", "all": "All companies", "declining": "Declining companies", "source": "Salesforce, SMB Trends 2025" },
+    "agents": { "title": "Companies scaling AI agents", "large": "Revenue above $1 billion", "smaller": "Smaller companies", "source": "McKinsey, The state of AI 2026" },
+    "tiles": [
+      { "id": "klarna", "value": "2/3", "text": "of Klarna’s support chats were handled by an AI assistant in its very first month — the work of 700 agents", "source": "Klarna, 2024" },
+      { "id": "gartner", "value": "80%", "text": "of common customer service issues will be resolved by AI on its own by 2029", "source": "Gartner, 2025" }
     ],
     "timelineLabel": "It already happened with websites",
     "timeline": [
@@ -76,6 +83,32 @@
       { "id": "forecast", "period": "2027+", "text": "An AI assistant will become as essential for small businesses as a website. Gartner expects AI to resolve 80% of common customer service issues on its own by 2029. Those who start early will win the customers.", "isForecast": true, "source": "Gartner, 2025" }
     ],
     "forecast": "My forecast"
+  },
+  "calc": {
+    "heading": "How many customers you lose",
+    "lead": "Move the sliders to match your business — we’ll estimate what the people who write in the evening and at night and never get a reply are worth.",
+    "perDay": "Messages per day",
+    "offShare": "Written outside working hours",
+    "conversion": "Become customers",
+    "check": "Average order",
+    "resultLabel": "Lost without a reply, roughly",
+    "perMonth": "per month",
+    "lostClients": "Customers who wrote and didn’t get a reply: {count}",
+    "chartTitle": "Revenue from messages per month",
+    "now": "Now",
+    "withBot": "With a bot",
+    "note": "An estimate based on your numbers, not a promise of results.",
+    "cta": "Win these customers back"
+  },
+  "founder": {
+    "initial": "V",
+    "heading": "Who builds your bot — me, personally",
+    "text": "From the first conversation to launch and edits. No subcontractors, no drag-and-drop builders.",
+    "link": "More about me"
+  },
+  "aboutPage": {
+    "title": "About me — Valentin, AI chatbot developer",
+    "description": "Who builds the AI chatbots: development experience, own projects, skills and languages."
   },
   "features": {
     "heading": "What kinds of bots there are and what they do",
@@ -200,8 +233,8 @@
   "steps": {
     "heading": "How to start",
     "items": [
-      { "title": "Send “{word}”", "text": "In Instagram DMs or on Telegram. Tell me in a couple of words what you do." },
-      { "title": "Free audit", "text": "I’ll look at your business and send you what to automate first and what it costs." },
+      { "title": "Message me", "text": "On Instagram or Telegram. Tell me in a couple of words what you do — I’ll reply with which bot fits." },
+      { "title": "Audit", "text": "A call and a review of your chats: where you lose customers and what to automate first. This is the Start plan — its cost counts towards the bot if you order one." },
       { "title": "Launch", "text": "I set up the bot for you, we test it together and go live. You focus on your work." }
     ]
   },
@@ -244,7 +277,7 @@
   },
   "final": {
     "heading": "Recognise your business?",
-    "text": "Send “{word}” — I’ll look at where you’re losing customers for free and tell you what to automate first.",
+    "text": "Tell me what you do — I’ll reply with which bot fits you and where to start.",
     "instagram": "Message on Instagram",
     "telegram": "Message on Telegram",
     "noContacts": "Contact details will appear here soon."

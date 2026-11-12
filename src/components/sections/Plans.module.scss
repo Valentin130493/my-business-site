@@ -1,7 +1,7 @@
 @use "@/styles/variables" as vars;
 
-$featured-muted: rgba(31, 54, 51, 0.74);
-$featured-line: rgba(31, 54, 51, 0.14);
+$featured-muted: var(--color-on-dark-muted);
+$featured-line: rgba(255, 255, 255, 0.16);
 
 .section {
   @include vars.section;
@@ -34,8 +34,9 @@ $featured-line: rgba(31, 54, 51, 0.14);
 }
 
 .featured {
-  border-color: rgba(255, 255, 255, 0.7);
-  background: var(--gradient-primary);
+  border-color: transparent;
+  background: var(--color-sea);
+  color: var(--color-on-dark);
 }
 
 .header {
@@ -63,8 +64,8 @@ $featured-line: rgba(31, 54, 51, 0.14);
 .badge {
   padding: vars.$space-1 vars.$space-3;
   border-radius: vars.$radius-pill;
-  background: var(--color-ink);
-  color: var(--color-butter);
+  background: var(--color-mint);
+  color: var(--color-ink);
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.04em;
@@ -133,7 +134,7 @@ $featured-line: rgba(31, 54, 51, 0.14);
     transform: rotate(45deg);
 
     .featured & {
-      border-color: var(--color-ink);
+      border-color: var(--color-mint);
     }
   }
 }

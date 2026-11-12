@@ -43,11 +43,16 @@ export type BotType = {
   example: string;
 };
 
-export type TrendStat = {
+export type TrendTile = {
   id: string;
   value: string;
   text: string;
   source: string;
+};
+
+export type StatItem = {
+  value: string;
+  text: string;
 };
 
 export type TrendStep = {

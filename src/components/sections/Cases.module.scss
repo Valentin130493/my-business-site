@@ -49,9 +49,6 @@
 }
 
 .wide {
-  border-color: rgba(255, 255, 255, 0.7);
-  background: var(--gradient-soft);
-
   @media (hover: hover) {
     &:hover {
       transform: none;
@@ -117,8 +114,7 @@
 
 .module {
   padding-left: vars.$space-4;
-  border-left: 3px solid;
-  border-image: linear-gradient(180deg, var(--color-sea), var(--color-mint)) 1;
+  border-left: 3px solid var(--color-mint);
 
   p {
     font-size: 0.9375rem;

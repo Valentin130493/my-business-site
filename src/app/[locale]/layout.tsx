@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Golos_Text, Unbounded } from "next/font/google";
+import { Golos_Text, Onest } from "next/font/google";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -26,9 +26,9 @@ const golos = Golos_Text({
   display: "swap",
 });
 
-const unbounded = Unbounded({
+const onest = Onest({
   subsets: ["latin", "latin-ext", "cyrillic"],
-  weight: ["500", "700"],
+  weight: ["500", "600"],
   variable: "--font-display",
   display: "swap",
 });
@@ -105,7 +105,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
   });
 
   return (
-    <html lang={locale} className={`${golos.variable} ${unbounded.variable}`}>
+    <html lang={locale} className={`${golos.variable} ${onest.variable}`}>
       <body>
         <a href={`#${MAIN_CONTENT_ID}`} className="skip-link">
           {t("nav.skip")}

@@ -4,10 +4,10 @@ export const LOCALE_UK = "uk";
 export const LOCALE_ME = "sr-ME";
 
 export const SUPPORTED_LOCALES = [
-  LOCALE_RU,
   LOCALE_EN,
   LOCALE_UK,
   LOCALE_ME,
+  LOCALE_RU,
 ] as const;
 
 export const DEFAULT_LOCALE = LOCALE_RU;
@@ -26,9 +26,11 @@ export const LOCALE_LABELS: Record<(typeof SUPPORTED_LOCALES)[number], string> =
 
 export type SiteLocale = (typeof SUPPORTED_LOCALES)[number];
 
-export function localePath(locale: SiteLocale): string {
+export const ABOUT_PATH = "/about";
+
+export function localePath(locale: SiteLocale, path = ""): string {
   const prefixes: Partial<Record<SiteLocale, string>> = LOCALE_PREFIXES;
-  return prefixes[locale] ?? `/${locale}`;
+  return `${prefixes[locale] ?? `/${locale}`}${path}`;
 }
 
 export const OG_LOCALES: Record<SiteLocale, string> = {

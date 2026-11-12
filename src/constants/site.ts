@@ -14,13 +14,15 @@ export const CASE_URLS: Partial<Record<string, string>> = {
 
 const MCKINSEY_STATE_OF_AI_URL =
   "https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai";
+const GARTNER_CUSTOMER_SERVICE_URL =
+  "https://www.gartner.com/en/newsroom/press-releases/2025-03-05-gartner-predicts-agentic-ai-will-autonomously-resolve-80-percent-of-common-customer-service-issues-without-human-intervention-by-20290";
 
 export const TREND_SOURCE_URLS: Partial<Record<string, string>> = {
-  "mckinsey-large": MCKINSEY_STATE_OF_AI_URL,
-  "mckinsey-small": MCKINSEY_STATE_OF_AI_URL,
-  census: "https://www.census.gov/library/stories/2026/05/ai-use-businesses.html",
+  market: "https://www.marketsandmarkets.com/Market-Reports/ai-agents-market-15761548.html",
+  smb: "https://www.salesforce.com/uk/news/stories/smbs-ai-trends-2025/",
+  agents: MCKINSEY_STATE_OF_AI_URL,
   klarna:
     "https://www.klarna.com/international/press/klarna-ai-assistant-handles-two-thirds-of-customer-service-chats-in-its-first-month/",
-  forecast:
-    "https://www.gartner.com/en/newsroom/press-releases/2025-03-05-gartner-predicts-agentic-ai-will-autonomously-resolve-80-percent-of-common-customer-service-issues-without-human-intervention-by-20290",
+  gartner: GARTNER_CUSTOMER_SERVICE_URL,
+  forecast: GARTNER_CUSTOMER_SERVICE_URL,
 };

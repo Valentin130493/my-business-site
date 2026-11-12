@@ -6,6 +6,12 @@ import {
   localePath,
   type SiteLocale,
 } from "@/constants/locales";
+import {
+  AGENTS_SCALING,
+  AGENTS_SCALING_YEARS,
+  AI_AGENTS_MARKET,
+  SMB_AI_USAGE,
+} from "@/constants/marketData";
 import { PLAN_PRICES, formatPrice } from "@/constants/pricing";
 import { SECTION_ID_CONTACT } from "@/constants/sections";
 import { CASE_URLS, SITE_URL, TREND_SOURCE_URLS } from "@/constants/site";
@@ -16,8 +22,8 @@ import type {
   FaqItem,
   PlanText,
   SkillGroup,
-  TrendStat,
   TrendStep,
+  TrendTile,
   BotType,
 } from "@/types/content";
 
@@ -34,7 +40,7 @@ export function buildLlmsTxt(t: Translator, locale: SiteLocale): string {
     buildCases(t),
     buildPlans(t, locale),
     buildFeatures(t),
-    buildTrend(t),
+    buildTrend(t, locale),
     buildSteps(t),
     buildFaq(t),
     buildContacts(t, locale),
@@ -139,17 +145,36 @@ function buildFeatures(t: Translator): string {
   ].join(BLOCK_SEPARATOR);
 }
 
-function buildTrend(t: Translator): string {
-  const stats = t.raw("trend.stats") as TrendStat[];
+function buildTrendFacts(t: Translator, locale: SiteLocale): string[] {
+  const number = new Intl.NumberFormat(locale, { maximumFractionDigits: 1 });
+  const market = AI_AGENTS_MARKET.map(
+    (point) =>
+      `${point.year}${point.isForecast ? ` (${t("trend.market.forecast")})` : ""}: ${number.format(point.billionsUsd)}`,
+  ).join(", ");
+  const smb = SMB_AI_USAGE.map((row) => `${t(`trend.smb.${row.id}`)}: ${row.percent}%`).join(", ");
+  const agents = AGENTS_SCALING.map(
+    (group) => `${t(`trend.agents.${group.id}`)}: ${group.previous}% → ${group.current}%`,
+  ).join(", ");
+  const tiles = (t.raw("trend.tiles") as TrendTile[]).map(
+    (tile) => `${tile.value} — ${tile.text} (${citation(tile.id, tile.source)})`,
+  );
+
+  return [
+    `${t("trend.market.title")}, ${t("trend.market.unit")}: ${market} (${citation("market", t("trend.market.source"))})`,
+    `${t("trend.smb.title")}: ${smb} (${citation("smb", t("trend.smb.source"))})`,
+    `${t("trend.agents.title")}, ${AGENTS_SCALING_YEARS.previous} → ${AGENTS_SCALING_YEARS.current}: ${agents} (${citation("agents", t("trend.agents.source"))})`,
+    ...tiles,
+  ];
+}
+
+function buildTrend(t: Translator, locale: SiteLocale): string {
   const timeline = t.raw("trend.timeline") as TrendStep[];
   const forecast = t("trend.forecast");
 
   return [
     `## ${t("trend.heading")}`,
     t("trend.lead"),
-    bulletList(
-      stats.map((stat) => `${stat.value} — ${stat.text} (${citation(stat.id, stat.source)})`),
-    ),
+    bulletList(buildTrendFacts(t, locale)),
     `### ${t("trend.timelineLabel")}`,
     bulletList(
       timeline.map((step) => {
@@ -167,12 +192,7 @@ function citation(id: string, label: string): string {
 }
 
 function buildSteps(t: Translator): string {
-  const word = t("word");
-  const steps = (t.raw("steps.items") as TitledText[]).map((step) => ({
-    ...step,
-    title: step.title.replace("{word}", word),
-  }));
-  return buildTitledList(t("steps.heading"), steps);
+  return buildTitledList(t("steps.heading"), t.raw("steps.items") as TitledText[]);
 }
 
 function buildFaq(t: Translator): string {

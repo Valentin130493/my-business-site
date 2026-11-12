@@ -39,15 +39,6 @@
   border: 1px solid var(--color-line);
   border-radius: vars.$radius-lg;
   background: var(--color-paper);
-  box-shadow: var(--shadow-soft);
-
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0 0 auto;
-    height: 4px;
-    background: var(--gradient-primary);
-  }
 }
 
 .title {
@@ -85,9 +76,8 @@
   gap: vars.$space-3 vars.$space-4;
   margin-top: vars.$space-10;
   padding: vars.$space-6;
-  border: 1px solid rgba(255, 255, 255, 0.7);
   border-radius: vars.$radius-lg;
-  background: var(--gradient-soft);
+  background: var(--color-foam);
 }
 
 .baseTitle {

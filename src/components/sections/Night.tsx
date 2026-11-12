@@ -20,18 +20,23 @@ export async function Night() {
       className={styles.section}
     >
       <Container>
-        <h2 id={headingId} className={styles.heading} {...revealProps()}>
-          {t("heading")}
-        </h2>
-        <ol className={styles.log}>
+        <div {...revealProps()}>
+          <p className={styles.eyebrow}>{t("eyebrow")}</p>
+          <h2 id={headingId} className={styles.heading}>
+            {t("heading")}
+          </h2>
+        </div>
+        <ol className={styles.grid}>
           {items.map((item, index) => (
-            <li key={item.time} className={styles.row} {...revealProps(index)}>
+            <li key={item.time} className={styles.card} {...revealProps(index)}>
               <time className={styles.time}>{item.time}</time>
               <p className={styles.text}>{item.text}</p>
             </li>
           ))}
         </ol>
-        <p className={styles.after}>{t("after")}</p>
+        <p className={styles.after} {...revealProps()}>
+          {t("after")}
+        </p>
       </Container>
     </section>
   );

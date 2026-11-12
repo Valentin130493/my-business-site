@@ -23,8 +23,7 @@
 
 .step {
   padding-top: vars.$space-5;
-  border-top: 3px solid;
-  border-image: var(--gradient-primary) 1;
+  border-top: 2px solid var(--color-ink);
   counter-increment: step;
 
   &::before {
@@ -32,13 +31,10 @@
     display: inline-block;
     margin-bottom: vars.$space-4;
     font-family: vars.$font-family-display;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 2.75rem;
     line-height: 1.05;
-    background: var(--gradient-text);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    color: var(--color-ink);
   }
 }
 

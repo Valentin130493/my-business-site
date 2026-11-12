@@ -9,6 +9,9 @@
     "skip": "Preskoči na sadržaj",
     "home": "Na vrh",
     "chooseChannel": "Gdje vam je zgodnije da pišete?",
+    "calc": "Kalkulator",
+    "menu": "Otvori meni",
+    "closeMenu": "Zatvori meni",
     "features": "O botovima",
     "cases": "Projekti",
     "plans": "Cijene",
@@ -19,19 +22,22 @@
     "write": "Pišite mi",
     "languages": "Jezik sajta"
   },
-  "word": "ANALIZA",
   "hero": {
     "title": "Gotovih botova ima na hiljade. Ja pravim jednog: za vaš biznis.",
     "lead": "Odgovara vašim klijentima za nekoliko sekundi, danju i noću, zakazuje termine i prikuplja upite. Vi dobijate spremne klijente, a ne beskrajne poruke.",
-    "ctaPrimary": "Besplatna analiza",
+    "badge": "AI chatbotovi za mali i srednji biznis",
+    "founderLine": "Svakog bota pravim sam: 5+ godina u razvoju, svoja platforma za AI chatbotove i servis za praćenje sajtova Dumza.",
+    "ctaPrimary": "Razgovarajmo o botu",
     "ctaSecondary": "Pogledajte cijene",
-    "note": "Pošaljite „{word}” u DM — pogledaću vaš biznis i reći vam šta prvo da automatizujete.",
-    "factsLabel": "Ukratko o meni",
-    "facts": [
-      "Full-stack programer, 5+ godina",
-      "Moja platforma za AI chatbotove",
-      "Moj SaaS — dumza.com",
-      "AI bot koji sam vodi vijesti"
+    "calcLink": "Izračunajte koliko klijenata gubite"
+  },
+  "stats": {
+    "label": "Ukratko",
+    "items": [
+      { "value": "5+ godina", "text": "u razvoju" },
+      { "value": "24/7", "text": "bot odgovara bez slobodnih dana" },
+      { "value": "4 + sajt", "text": "Telegram, WhatsApp, Instagram i Messenger" },
+      { "value": "{startPrice}", "text": "prvi korak — analiza biznisa" }
     ]
   },
   "chat": {
@@ -50,6 +56,7 @@
     ]
   },
   "night": {
+    "eyebrow": "Zvuči poznato?",
     "heading": "Dok ste zauzeti ili spavate, klijenti pišu",
     "items": [
       { "time": "23:40", "text": "Pitali su za cijenu. Odgovorili ste ujutru, ali je osoba već zakazala kod onih koji su se javili prije." },
@@ -61,13 +68,13 @@
   "trend": {
     "eyebrow": "Trend s kraja 2026.",
     "heading": "Velike kompanije već rade sa AI agentima. Srednji i mali biznis je sljedeći",
-    "lead": "AI agenti više nisu eksperiment: u velikim kompanijama odgovaraju klijentima, pišu kod i rasterećuju zaposlene. A mali biznis se skoro nije pomjerio — to pokazuju i istraživanje McKinseyja i statistika SAD-a. Znači, upravo sada možete biti prvi u svojoj niši.",
-    "statsLabel": "Brojke kompanija i istraživanja",
-    "stats": [
-      { "id": "mckinsey-large", "value": "40%", "text": "velikih kompanija sa prihodom preko milijardu dolara širi upotrebu AI agenata — prije godinu dana bilo je 27%", "source": "McKinsey, The state of AI 2026" },
-      { "id": "mckinsey-small", "value": "22%", "text": "kod manjih kompanija — i za godinu dana taj udio nije porastao", "source": "McKinsey, The state of AI 2026" },
-      { "id": "census", "value": "~20%", "text": "kompanija u SAD-u koristi AI. Kod većih udio raste, a kod firmi do 20 zaposlenih stoji u mjestu", "source": "U.S. Census Bureau, 2026" },
-      { "id": "klarna", "value": "2/3", "text": "chatova podrške u Klarni riješio je AI asistent već u prvom mjesecu — posao 700 zaposlenih", "source": "Klarna, 2024" }
+    "lead": "AI agenti više nisu eksperiment: odgovaraju klijentima, pišu kod i rasterećuju zaposlene. Tržište raste višestruko, velike kompanije već šire upotrebu agenata, a mali i srednji biznis tek počinje. Znači, upravo sada možete biti prvi u svojoj niši.",
+    "market": { "title": "Svjetsko tržište AI agenata", "unit": "milijardi $", "forecast": "prognoza", "source": "MarketsandMarkets" },
+    "smb": { "title": "Mali i srednji biznis koji već isprobava ili koristi AI", "growing": "Kompanije koje rastu", "all": "Sve kompanije", "declining": "Kompanije koje se smanjuju", "source": "Salesforce, SMB Trends 2025" },
+    "agents": { "title": "Kompanije koje šire upotrebu AI agenata", "large": "Prihod preko milijardu $", "smaller": "Manje kompanije", "source": "McKinsey, The state of AI 2026" },
+    "tiles": [
+      { "id": "klarna", "value": "2/3", "text": "chatova podrške u Klarni riješio je AI asistent već u prvom mjesecu — posao 700 zaposlenih", "source": "Klarna, 2024" },
+      { "id": "gartner", "value": "80%", "text": "uobičajenih upita klijenata AI će rješavati sam do 2029.", "source": "Gartner, 2025" }
     ],
     "timelineLabel": "Isto se već desilo sa sajtovima",
     "timeline": [
@@ -76,6 +83,32 @@
       { "id": "forecast", "period": "2027+", "text": "AI asistent će za mali biznis postati obavezan kao i sajt. Gartner očekuje da će do 2029. AI sam rješavati 80% uobičajenih upita klijenata. Ko počne ranije, preuzeće klijente.", "isForecast": true, "source": "Gartner, 2025" }
     ],
     "forecast": "Moja prognoza"
+  },
+  "calc": {
+    "heading": "Koliko klijenata gubite",
+    "lead": "Pomjerite klizače prema svom biznisu — izračunaćemo koliko donose oni koji pišu uveče i noću, a ne dočekaju odgovor.",
+    "perDay": "Poruka dnevno",
+    "offShare": "Pišu van radnog vremena",
+    "conversion": "Postaju klijenti",
+    "check": "Prosječan račun",
+    "resultLabel": "Bez odgovora odlazi otprilike",
+    "perMonth": "mjesečno",
+    "lostClients": "Klijenata koji su pisali i nisu dočekali odgovor: {count}",
+    "chartTitle": "Prihod od poruka mjesečno",
+    "now": "Sada",
+    "withBot": "Sa botom",
+    "note": "Procjena na vašim brojkama, a ne obećanje rezultata.",
+    "cta": "Vratite ove klijente"
+  },
+  "founder": {
+    "initial": "V",
+    "heading": "Ko pravi vašeg bota — ja, lično",
+    "text": "Od prvog razgovora do pokretanja i izmjena. Bez podizvođača i gotovih alata.",
+    "link": "Više o meni"
+  },
+  "aboutPage": {
+    "title": "O meni — Valentin, programer AI chatbotova",
+    "description": "Ko pravi AI chatbotove: iskustvo u razvoju, sopstveni projekti, vještine i jezici."
   },
   "features": {
     "heading": "Kakvi botovi postoje i šta mogu",
@@ -200,8 +233,8 @@
   "steps": {
     "heading": "Kako početi",
     "items": [
-      { "title": "Pošaljite „{word}”", "text": "U DM na Instagramu ili na Telegramu. Napišite u par riječi čime se bavite." },
-      { "title": "Besplatna analiza", "text": "Pogledaću vaš biznis i poslati šta prvo da automatizujete i koliko to košta." },
+      { "title": "Pišite mi", "text": "Na Instagramu ili Telegramu. Napišite u par riječi čime se bavite — odgovoriću koji bot vam odgovara." },
+      { "title": "Analiza", "text": "Poziv i analiza vaših poruka: gdje gubite klijente i šta prvo automatizovati. To je paket „Start” — njegova cijena se uračunava ako naručite bota." },
       { "title": "Pokretanje", "text": "Podešavam bota za vas, zajedno testiramo i pokrećemo. Vi se bavite svojim poslom." }
     ]
   },
@@ -244,7 +277,7 @@
   },
   "final": {
     "heading": "Prepoznali ste svoj biznis?",
-    "text": "Pošaljite „{word}” — besplatno ću pogledati gdje gubite klijente i poslati šta prvo možete da automatizujete.",
+    "text": "Napišite čime se bavite — odgovoriću koji bot vam odgovara i odakle početi.",
     "instagram": "Pišite na Instagramu",
     "telegram": "Pišite na Telegramu",
     "noContacts": "Kontakti će se uskoro pojaviti ovdje."

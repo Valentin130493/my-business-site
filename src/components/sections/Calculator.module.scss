@@ -1,0 +1,163 @@
+@use "@/styles/variables" as vars;
+
+$bar-thickness: 14px;
+
+.section {
+  @include vars.section;
+  background: var(--color-ink);
+  color: var(--color-on-dark);
+}
+
+.intro {
+  margin-bottom: vars.$space-10;
+
+  h2 {
+    max-width: 22ch;
+  }
+}
+
+.lead {
+  max-width: 52ch;
+  margin-top: vars.$space-4;
+  color: var(--color-on-dark-muted);
+}
+
+.widget {
+  display: grid;
+  gap: vars.$space-8;
+  align-items: start;
+
+  @media (min-width: vars.$breakpoint-desktop) {
+    grid-template-columns: 1fr 1fr;
+    gap: vars.$space-12;
+  }
+}
+
+.fields {
+  display: grid;
+  gap: vars.$space-3;
+
+  @media (min-width: vars.$breakpoint-tablet) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: vars.$space-3;
+  padding: vars.$space-5;
+  border-radius: vars.$radius-sm;
+  background: var(--color-dark-panel);
+}
+
+.fieldHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: vars.$space-3;
+  font-size: 0.9375rem;
+  color: var(--color-on-dark-muted);
+}
+
+.fieldValue {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-on-dark);
+  white-space: nowrap;
+}
+
+.range {
+  width: 100%;
+  accent-color: var(--color-mint);
+  cursor: pointer;
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  gap: vars.$space-3;
+  padding: vars.$space-8 vars.$space-6;
+  border-radius: vars.$radius-lg;
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+.resultLabel {
+  font-size: 0.9375rem;
+  color: var(--color-muted);
+}
+
+.resultValue {
+  @include vars.display;
+  font-size: clamp(2.5rem, 5vw, 3.25rem);
+  line-height: 1;
+
+  span {
+    font-family: vars.$font-family-base;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-muted);
+  }
+}
+
+.resultNote {
+  color: var(--color-muted);
+}
+
+.chart {
+  display: grid;
+  gap: vars.$space-3;
+  margin: vars.$space-4 0;
+}
+
+.chartTitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.barRow {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  align-items: center;
+  gap: vars.$space-3;
+}
+
+.barLabel {
+  font-size: 0.875rem;
+  color: var(--color-muted);
+}
+
+.barArea {
+  padding-right: 5rem;
+}
+
+.bar {
+  position: relative;
+  height: $bar-thickness;
+  border-radius: 0 4px 4px 0;
+  background: var(--color-chart-muted);
+}
+
+.barAccent {
+  background: var(--color-chart-accent);
+}
+
+.barValue {
+  position: absolute;
+  top: 50%;
+  left: calc(100% + 8px);
+  transform: translateY(-50%);
+  font-size: 0.875rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.cta {
+  align-self: flex-start;
+}
+
+.disclaimer {
+  font-size: 0.8125rem;
+  color: var(--color-muted);
+}

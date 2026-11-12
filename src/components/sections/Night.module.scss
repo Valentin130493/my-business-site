@@ -1,48 +1,60 @@
 @use "@/styles/variables" as vars;
 
-$line: rgba(238, 240, 236, 0.15);
-
 .section {
   @include vars.section;
-  background: var(--gradient-dark);
-  color: var(--color-stone);
+}
+
+.eyebrow {
+  margin-bottom: vars.$space-2;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted);
 }
 
 .heading {
-  margin-bottom: vars.$space-12;
+  max-width: 22ch;
 }
 
-.log {
-  border-top: 1px solid $line;
-  list-style: none;
-}
-
-.row {
+.grid {
   display: grid;
-  gap: vars.$space-2;
-  padding-block: vars.$space-5;
-  border-bottom: 1px solid $line;
+  gap: vars.$space-4;
+  margin-top: vars.$space-10;
+  list-style: none;
 
   @media (min-width: vars.$breakpoint-tablet) {
-    grid-template-columns: 110px 1fr;
-    gap: vars.$space-6;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: vars.$space-3;
+  padding: vars.$space-6;
+  border: 1px solid var(--color-line);
+  border-radius: vars.$radius-lg;
+  background: var(--color-paper);
+}
+
 .time {
-  @include vars.display;
-  font-weight: 500;
-  font-size: 1.375rem;
-  color: var(--color-sun);
+  align-self: flex-start;
+  padding: 2px vars.$space-3;
+  border-radius: vars.$radius-pill;
+  background: var(--color-foam);
+  font-size: 0.875rem;
+  font-weight: 600;
 }
 
 .text {
-  max-width: 52ch;
-  font-size: 1.1875rem;
+  font-size: 1rem;
+  color: var(--color-muted);
 }
 
 .after {
-  max-width: 46ch;
-  margin-top: vars.$space-10;
-  font-size: 1.25rem;
+  max-width: 52ch;
+  margin-top: vars.$space-8;
+  font-size: 1.125rem;
+  font-weight: 500;
 }

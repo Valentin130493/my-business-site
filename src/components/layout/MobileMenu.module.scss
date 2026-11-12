@@ -1,0 +1,130 @@
+@use "@/styles/variables" as vars;
+
+$toggle-size: 44px;
+$menu-enter: 200ms;
+$menu-exit: 150ms;
+
+.root {
+  @media (min-width: vars.$breakpoint-desktop) {
+    display: none;
+  }
+}
+
+.toggle {
+  display: grid;
+  place-items: center;
+  width: $toggle-size;
+  height: $toggle-size;
+  border: 1.5px solid var(--color-ink);
+  border-radius: 12px;
+}
+
+.bars {
+  position: relative;
+  width: 18px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--color-ink);
+  transition: background-color $menu-enter var(--ease-out);
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 18px;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--color-ink);
+    transition: transform $menu-enter var(--ease-out);
+  }
+
+  &::before {
+    transform: translateY(-6px);
+  }
+
+  &::after {
+    transform: translateY(6px);
+  }
+
+  .root[data-open] & {
+    background: transparent;
+
+    &::before {
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+.panel {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  padding: vars.$space-4 vars.$space-4 vars.$space-6;
+  border-bottom: 1px solid var(--color-line);
+  background: var(--color-paper);
+  box-shadow: var(--shadow-soft);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition:
+    opacity $menu-exit var(--ease-in),
+    transform $menu-exit var(--ease-in),
+    visibility 0s linear $menu-exit;
+
+  .root[data-open] & {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition:
+      opacity $menu-enter var(--ease-out),
+      transform $menu-enter var(--ease-out),
+      visibility 0s;
+  }
+}
+
+.links {
+  display: grid;
+  list-style: none;
+}
+
+.link {
+  display: block;
+  padding: vars.$space-3 vars.$space-2;
+  border-bottom: 1px solid var(--color-line);
+  font-size: 1.0625rem;
+  font-weight: 500;
+
+  &[aria-current="page"] {
+    font-weight: 700;
+  }
+}
+
+.contacts {
+  margin-top: vars.$space-5;
+}
+
+.contactsLabel {
+  margin-bottom: vars.$space-3;
+  font-size: 0.875rem;
+  color: var(--color-muted);
+}
+
+.contactButtons {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: vars.$space-3;
+}
+
+.contact {
+  padding: vars.$space-3;
+  border-radius: vars.$radius-pill;
+  background: var(--color-sea);
+  color: var(--color-on-dark);
+  font-weight: 600;
+}

@@ -1,16 +1,19 @@
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 
 import { Container } from "@/components/ui/Container";
 import { SECTION_ID_TREND, headingIdOf } from "@/constants/sections";
-import { TREND_SOURCE_URLS } from "@/constants/site";
 import { revealProps } from "@/lib/reveal";
-import type { TrendStat, TrendStep } from "@/types/content";
+import type { TrendStep, TrendTile } from "@/types/content";
 
+import { AgentsChart, MarketChart, SmbChart } from "./TrendCharts";
+import { TrendSourceLink as SourceLink } from "./TrendSourceLink";
 import styles from "./Trend.module.scss";
 
 export async function Trend() {
   const t = await getTranslations("trend");
+  const locale = await getLocale();
   const headingId = headingIdOf(SECTION_ID_TREND);
+  const tiles = t.raw("tiles") as TrendTile[];
 
   return (
     <section
@@ -19,48 +22,44 @@ export async function Trend() {
       className={styles.section}
     >
       <Container>
-        <div {...revealProps()}>
+        <div className={styles.intro} {...revealProps()}>
           <p className={styles.eyebrow}>{t("eyebrow")}</p>
           <h2 id={headingId} className={styles.heading}>
             {t("heading")}
           </h2>
           <p className={styles.lead}>{t("lead")}</p>
         </div>
-        <StatList label={t("statsLabel")} stats={t.raw("stats") as TrendStat[]} />
+
+        <div className={styles.row}>
+          <div className={styles.wide} {...revealProps(0)}>
+            <MarketChart locale={locale} />
+          </div>
+          <div className={styles.tiles}>
+            {tiles.map((tile, index) => (
+              <div key={tile.id} className={styles.tile} {...revealProps(index + 1)}>
+                <p className={styles.tileValue}>{tile.value}</p>
+                <p className={styles.tileText}>{tile.text}</p>
+                <p className={styles.source}>
+                  <SourceLink id={tile.id} label={tile.source} />
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className={styles.row}>
+          <div className={styles.half} {...revealProps(0)}>
+            <SmbChart />
+          </div>
+          <div className={styles.half} {...revealProps(1)}>
+            <AgentsChart />
+          </div>
+        </div>
+
         <h3 className={styles.timelineTitle}>{t("timelineLabel")}</h3>
-        <Timeline
-          steps={t.raw("timeline") as TrendStep[]}
-          forecastLabel={t("forecast")}
-        />
+        <Timeline steps={t.raw("timeline") as TrendStep[]} forecastLabel={t("forecast")} />
       </Container>
     </section>
-  );
-}
-
-function SourceLink({ id, label }: { id: string; label: string }) {
-  const url = TREND_SOURCE_URLS[id];
-  if (!url) return label;
-
-  return (
-    <a href={url} className={styles.sourceLink} target="_blank" rel="noopener">
-      {label}
-    </a>
-  );
-}
-
-function StatList({ label, stats }: { label: string; stats: TrendStat[] }) {
-  return (
-    <ul className={styles.stats} aria-label={label}>
-      {stats.map((stat, index) => (
-        <li key={stat.id} className={styles.stat} {...revealProps(index)}>
-          <p className={styles.value}>{stat.value}</p>
-          <p className={styles.statText}>{stat.text}</p>
-          <p className={styles.statSource}>
-            <SourceLink id={stat.id} label={stat.source} />
-          </p>
-        </li>
-      ))}
-    </ul>
   );
 }
 

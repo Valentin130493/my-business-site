@@ -1,16 +1,13 @@
 @use "@/styles/variables" as vars;
 
-$forecast-text: rgba(246, 245, 239, 0.85);
+$axis-gutter: 36px;
+$plot-height: 220px;
+$bar-thickness: 16px;
+$column-width: 24px;
+$value-gap: 8px;
 
 .section {
   @include vars.section;
-  background: linear-gradient(
-    180deg,
-    transparent 0%,
-    rgba(228, 241, 235, 0.7) 30%,
-    rgba(251, 243, 220, 0.6) 75%,
-    transparent 100%
-  );
 }
 
 .eyebrow {
@@ -19,7 +16,7 @@ $forecast-text: rgba(246, 245, 239, 0.85);
   padding: vars.$space-1 vars.$space-3;
   border-radius: vars.$radius-pill;
   background: var(--color-ink);
-  color: var(--color-sun);
+  color: var(--color-mint);
   font-size: 0.8125rem;
   font-weight: 600;
   letter-spacing: 0.06em;
@@ -37,52 +34,242 @@ $forecast-text: rgba(246, 245, 239, 0.85);
   color: var(--color-muted);
 }
 
-.stats {
-  display: grid;
-  gap: vars.$space-4;
-  margin-top: vars.$space-12;
-  list-style: none;
-
-  @media (min-width: vars.$breakpoint-tablet) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media (min-width: vars.$breakpoint-desktop) {
-    grid-template-columns: repeat(4, 1fr);
-  }
+.intro {
+  margin-bottom: vars.$space-8;
 }
 
-.stat {
+.row {
   display: flex;
+  flex-wrap: wrap;
+  gap: vars.$space-4;
+  margin-top: vars.$space-4;
+}
+
+.wide {
+  flex: 2 1 520px;
+  min-width: 0;
+}
+
+.half {
+  flex: 1 1 360px;
+  min-width: 0;
+}
+
+.tiles {
+  display: flex;
+  flex: 1 1 260px;
+  flex-direction: column;
+  gap: vars.$space-4;
+}
+
+.tile {
+  display: flex;
+  flex: 1;
   flex-direction: column;
   gap: vars.$space-2;
   padding: vars.$space-6;
-  border: 1px solid rgba(255, 255, 255, 0.8);
+  border: 1px solid var(--color-line);
   border-radius: vars.$radius-lg;
   background: var(--color-paper);
-  box-shadow: var(--shadow-soft);
 }
 
-.value {
+.tileValue {
   @include vars.display;
-  justify-self: start;
-  font-size: clamp(2.25rem, 4vw, 3rem);
-  line-height: 1.05;
-  background: var(--gradient-text);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  font-size: clamp(2.25rem, 4vw, 2.75rem);
+  line-height: 1;
 }
 
-.statText {
+.tileText {
   font-size: 1rem;
+  color: var(--color-muted);
 }
 
-.statSource {
-  margin-top: auto;
-  padding-top: vars.$space-2;
+.chart {
+  height: 100%;
+  margin: 0;
+  padding: vars.$space-6;
+  border: 1px solid var(--color-line);
+  border-radius: vars.$radius-lg;
+  background: var(--color-paper);
+}
+
+.chartCaption {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: vars.$space-2;
+  margin-bottom: vars.$space-6;
+}
+
+.chartTitle {
+  font-weight: 600;
+}
+
+.chartUnit {
+  font-size: 0.875rem;
+  color: var(--color-muted);
+}
+
+.plot {
+  position: relative;
+  height: $plot-height;
+  margin: vars.$space-6 0 0 $axis-gutter;
+}
+
+.gridLine {
+  position: absolute;
+  right: 0;
+  left: 0;
+  height: 1px;
+  background: var(--color-chart-grid);
+
+  span {
+    position: absolute;
+    left: -$axis-gutter;
+    transform: translateY(-50%);
+    font-size: 0.75rem;
+    font-variant-numeric: tabular-nums;
+    color: var(--color-muted);
+  }
+}
+
+.columns {
+  position: absolute;
+  inset: 0;
+  display: flex;
+}
+
+.column {
+  display: flex;
+  flex: 1;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.columnBar {
+  position: relative;
+  width: $column-width;
+  border-radius: 4px 4px 0 0;
+  background: var(--color-chart-muted);
+}
+
+.columnBar.highlight,
+.bar.highlight,
+.swatch.highlight {
+  background: var(--color-chart-accent);
+}
+
+.columnValue {
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.columnLabels {
+  display: flex;
+  margin: vars.$space-2 0 0 $axis-gutter;
+
+  span {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.875rem;
+    font-variant-numeric: tabular-nums;
+    color: var(--color-muted);
+  }
+}
+
+.forecastMark {
+  font-size: 0.75rem;
+  font-style: normal;
+}
+
+.bars {
+  display: grid;
+  gap: vars.$space-5;
+  list-style: none;
+}
+
+.barRow {
+  display: grid;
+  gap: vars.$space-2;
+}
+
+.barLabel {
+  font-size: 0.9375rem;
+}
+
+.barPair {
+  display: grid;
+  gap: 2px;
+}
+
+.barArea {
+  padding-right: 3rem;
+}
+
+.bar {
+  position: relative;
+  height: $bar-thickness;
+  border-radius: 0 4px 4px 0;
+  background: var(--color-chart-muted);
+}
+
+.barValue {
+  position: absolute;
+  top: 50%;
+  left: calc(100% + #{$value-gap});
+  transform: translateY(-50%);
+  font-size: 0.875rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.legend {
+  display: flex;
+  gap: vars.$space-4;
+  margin-bottom: vars.$space-4;
+  list-style: none;
+  font-size: 0.875rem;
+  color: var(--color-muted);
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: vars.$space-2;
+  }
+}
+
+.swatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  background: var(--color-chart-muted);
+}
+
+.source {
+  margin-top: vars.$space-5;
   font-size: 0.8125rem;
   color: var(--color-muted);
+}
+
+.sourceLink {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+
+  &:hover {
+    color: var(--color-ink);
+  }
+
+  .forecast &:hover {
+    color: var(--color-mint);
+  }
 }
 
 .timelineTitle {
@@ -102,16 +289,15 @@ $forecast-text: rgba(246, 245, 239, 0.85);
 
 .step {
   padding: vars.$space-6;
-  border-top: 3px solid var(--color-mint);
+  border-top: 2px solid var(--color-ink);
   border-radius: vars.$radius-sm;
   background: var(--color-paper);
-  box-shadow: var(--shadow-soft);
 }
 
 .forecast {
-  border-top-color: var(--color-sun);
-  background: var(--gradient-dark);
-  color: var(--color-stone);
+  border-top-color: var(--color-mint);
+  background: var(--color-ink);
+  color: var(--color-on-dark);
 }
 
 .period {
@@ -127,7 +313,7 @@ $forecast-text: rgba(246, 245, 239, 0.85);
 .badge {
   padding: 2px vars.$space-2;
   border-radius: vars.$radius-pill;
-  background: var(--color-sun);
+  background: var(--color-mint);
   color: var(--color-ink);
   font-family: vars.$font-family-base;
   font-size: 0.75rem;
@@ -141,7 +327,7 @@ $forecast-text: rgba(246, 245, 239, 0.85);
   color: var(--color-muted);
 
   .forecast & {
-    color: $forecast-text;
+    color: var(--color-on-dark-muted);
   }
 }
 
@@ -151,19 +337,6 @@ $forecast-text: rgba(246, 245, 239, 0.85);
   color: var(--color-muted);
 
   .forecast & {
-    color: $forecast-text;
-  }
-}
-
-.sourceLink {
-  text-decoration: underline;
-  text-underline-offset: 3px;
-
-  &:hover {
-    color: var(--color-ink);
-  }
-
-  .forecast &:hover {
-    color: var(--color-sun);
+    color: var(--color-on-dark-muted);
   }
 }

@@ -1,0 +1,49 @@
+@use "@/styles/variables" as vars;
+
+.section {
+  padding-bottom: vars.$space-16;
+  scroll-margin-top: vars.$navbar-height;
+}
+
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: vars.$space-5;
+  padding: vars.$space-8 vars.$space-6;
+  border: 1px solid var(--color-line);
+  border-radius: vars.$radius-lg;
+  background: var(--color-paper);
+}
+
+.avatar {
+  @include vars.display;
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--color-foam);
+  font-size: 1.5rem;
+}
+
+.content {
+  flex: 1 1 320px;
+}
+
+.heading {
+  max-width: none;
+  font-size: clamp(1.25rem, 2.4vw, 1.5rem);
+}
+
+.text {
+  margin-top: vars.$space-1;
+  color: var(--color-muted);
+}
+
+.link {
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
