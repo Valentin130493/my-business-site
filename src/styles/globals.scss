@@ -1,0 +1,161 @@
+@use "./variables" as vars;
+
+:root {
+  --color-stone: #f6f5ef;
+  --color-paper: #ffffff;
+  --color-ink: #1f3633;
+  --color-muted: #5a6e6a;
+  --color-sea: #3f7f74;
+  --color-sea-deep: #2f6259;
+  --color-mint: #bfe6d8;
+  --color-butter: #f6e2a6;
+  --color-peach: #f7cfba;
+  --color-foam: #e4f1eb;
+  --color-line: #d9e2dd;
+  --color-sun: #f3d98f;
+  --color-online: #4fbf8a;
+
+  --gradient-primary: linear-gradient(135deg, var(--color-mint) 0%, var(--color-butter) 100%);
+  --gradient-soft: linear-gradient(135deg, #e3f4ec 0%, #fbf3dc 55%, #fbe4d8 100%);
+  --gradient-dark: linear-gradient(155deg, #213c38 0%, #2f4f49 60%, #3b5249 100%);
+  --gradient-text: linear-gradient(135deg, var(--color-sea-deep) 0%, #5d9c86 100%);
+
+  --shadow-soft: 0 24px 48px -28px rgba(31, 54, 51, 0.35);
+  --shadow-phone: 0 30px 60px -30px rgba(31, 54, 51, 0.5);
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --duration-micro: 150ms;
+  --duration-reveal: 500ms;
+  --stagger-step: 60ms;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: vars.$navbar-height;
+}
+
+body {
+  background-color: var(--color-stone);
+  background-image:
+    radial-gradient(60rem 40rem at 0% -8%, rgba(191, 230, 216, 0.6), transparent 70%),
+    radial-gradient(50rem 36rem at 100% 4%, rgba(246, 226, 166, 0.5), transparent 70%),
+    radial-gradient(48rem 34rem at 85% 48%, rgba(247, 207, 186, 0.28), transparent 70%);
+  background-repeat: no-repeat;
+  color: var(--color-ink);
+  font-family: vars.$font-family-base;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+
+  @media (max-width: vars.$breakpoint-mobile) {
+    font-size: 1.0625rem;
+  }
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3 {
+  @include vars.display;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: clamp(2.125rem, 5.2vw, 3.75rem);
+}
+
+h2 {
+  font-size: clamp(1.625rem, 3.4vw, 2.5rem);
+  max-width: 18ch;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-sea);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.skip-link {
+  position: absolute;
+  top: vars.$space-2;
+  left: vars.$space-2;
+  z-index: 100;
+  padding: vars.$space-2 vars.$space-4;
+  border-radius: vars.$radius-pill;
+  background: var(--color-ink);
+  color: var(--color-stone);
+  transform: translateY(-200%);
+
+  &:focus {
+    transform: none;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+}
+
+// Прячем только когда JS подтвердил, что сам покажет элемент: без JS контент виден сразу
+@media (prefers-reduced-motion: no-preference) {
+  :root[data-reveal-ready] [data-reveal]:not([data-revealed]) {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  [data-revealed] {
+    transition:
+      opacity var(--duration-reveal) var(--ease-out),
+      transform var(--duration-reveal) var(--ease-out);
+    transition-delay: calc(var(--reveal-index, 0) * var(--stagger-step));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

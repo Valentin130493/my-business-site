@@ -1,0 +1,80 @@
+@use "@/styles/variables" as vars;
+
+.section {
+  @include vars.section;
+  padding-top: 0;
+
+  @media (min-width: vars.$breakpoint-desktop) {
+    padding-top: 0;
+  }
+}
+
+.heading {
+  margin-bottom: vars.$space-3;
+}
+
+.role {
+  margin-bottom: vars.$space-6;
+  font-weight: 600;
+  color: var(--color-sea);
+}
+
+.text {
+  column-gap: vars.$space-14;
+
+  p {
+    margin-bottom: vars.$space-4;
+    break-inside: avoid;
+  }
+
+  @media (min-width: vars.$breakpoint-desktop) {
+    columns: 2;
+  }
+}
+
+.details {
+  display: grid;
+  gap: vars.$space-10;
+  margin-top: vars.$space-16;
+
+  @media (min-width: vars.$breakpoint-tablet) {
+    grid-template-columns: 1fr 1fr;
+    gap: vars.$space-12 vars.$space-14;
+  }
+}
+
+.blockTitle {
+  margin-bottom: vars.$space-5;
+}
+
+.muted {
+  font-size: 1rem;
+  color: var(--color-muted);
+}
+
+.timeline {
+  display: grid;
+  gap: vars.$space-6;
+  list-style: none;
+}
+
+.jobTitle {
+  font-size: 1.0625rem;
+  font-weight: 600;
+}
+
+.period {
+  margin-bottom: vars.$space-1;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-sea);
+}
+
+.skills {
+  display: grid;
+  gap: vars.$space-4;
+
+  dt {
+    font-weight: 600;
+  }
+}

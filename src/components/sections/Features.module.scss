@@ -1,0 +1,110 @@
+@use "@/styles/variables" as vars;
+
+.section {
+  @include vars.section;
+}
+
+.heading {
+  max-width: 22ch;
+}
+
+.lead {
+  max-width: 56ch;
+  margin-top: vars.$space-4;
+  color: var(--color-muted);
+}
+
+.grid {
+  display: grid;
+  gap: vars.$space-5;
+  margin-top: vars.$space-12;
+  list-style: none;
+
+  @media (min-width: vars.$breakpoint-tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: vars.$breakpoint-desktop) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: vars.$space-3;
+  padding: vars.$space-8 vars.$space-6 vars.$space-6;
+  border: 1px solid var(--color-line);
+  border-radius: vars.$radius-lg;
+  background: var(--color-paper);
+  box-shadow: var(--shadow-soft);
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto;
+    height: 4px;
+    background: var(--gradient-primary);
+  }
+}
+
+.title {
+  font-size: 1.25rem;
+}
+
+.text {
+  font-size: 1rem;
+  color: var(--color-muted);
+}
+
+.example {
+  margin-top: auto;
+  padding: vars.$space-4;
+  border-radius: vars.$radius-sm;
+  background: var(--color-foam);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+.exampleLabel {
+  display: block;
+  margin-bottom: vars.$space-1;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-sea);
+}
+
+.base {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: vars.$space-3 vars.$space-4;
+  margin-top: vars.$space-10;
+  padding: vars.$space-6;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: vars.$radius-lg;
+  background: var(--gradient-soft);
+}
+
+.baseTitle {
+  font-size: 1rem;
+}
+
+.baseList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: vars.$space-2;
+  list-style: none;
+
+  li {
+    padding: vars.$space-1 vars.$space-3;
+    border-radius: vars.$radius-pill;
+    background: rgba(255, 255, 255, 0.75);
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+}

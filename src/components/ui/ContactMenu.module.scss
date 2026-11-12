@@ -1,0 +1,75 @@
+@use "@/styles/variables" as vars;
+
+$menu-enter: 200ms;
+$menu-exit: 150ms;
+
+.root {
+  position: relative;
+  display: inline-flex;
+
+  @media (max-width: vars.$breakpoint-mobile) {
+    width: 100%;
+  }
+}
+
+.menu {
+  position: absolute;
+  top: calc(100% + #{vars.$space-2});
+  left: 0;
+  z-index: 30;
+  min-width: 240px;
+  padding: vars.$space-3;
+  border: 1px solid var(--color-line);
+  border-radius: vars.$radius-sm;
+  background: var(--color-paper);
+  box-shadow: var(--shadow-soft);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition:
+    opacity $menu-exit var(--ease-in),
+    transform $menu-exit var(--ease-in),
+    visibility 0s linear $menu-exit;
+
+  .root[data-open] & {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition:
+      opacity $menu-enter var(--ease-out),
+      transform $menu-enter var(--ease-out),
+      visibility 0s;
+  }
+}
+
+.end {
+  right: 0;
+  left: auto;
+}
+
+.caption {
+  padding: 0 vars.$space-2 vars.$space-2;
+  font-size: 0.8125rem;
+  color: var(--color-muted);
+}
+
+.options {
+  display: grid;
+  gap: vars.$space-1;
+  list-style: none;
+}
+
+.option {
+  width: 100%;
+  padding: vars.$space-2 vars.$space-3;
+  border-radius: 10px;
+  font-weight: 600;
+  text-align: left;
+  transition: background-color var(--duration-micro) var(--ease-out);
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--color-foam);
+    }
+  }
+}

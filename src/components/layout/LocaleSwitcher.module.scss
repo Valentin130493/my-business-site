@@ -1,0 +1,30 @@
+@use "@/styles/variables" as vars;
+
+.switcher {
+  display: inline-flex;
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid var(--color-line);
+  border-radius: vars.$radius-pill;
+}
+
+.option {
+  padding: 4px 9px;
+  border-radius: vars.$radius-pill;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-muted);
+
+  &:hover {
+    color: var(--color-ink);
+  }
+}
+
+.active {
+  background: var(--color-ink);
+  color: var(--color-stone);
+
+  &:hover {
+    color: var(--color-stone);
+  }
+}

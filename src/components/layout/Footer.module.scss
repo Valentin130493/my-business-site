@@ -1,0 +1,30 @@
+@use "@/styles/variables" as vars;
+
+.footer {
+  padding-block: vars.$space-6 vars.$space-10;
+  font-size: 0.875rem;
+  color: var(--color-muted);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: vars.$space-3;
+}
+
+.contacts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: vars.$space-4;
+  font-style: normal;
+}
+
+.link {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+
+  &:hover {
+    color: var(--color-ink);
+  }
+}

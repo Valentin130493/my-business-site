@@ -1,0 +1,48 @@
+@use "@/styles/variables" as vars;
+
+$line: rgba(238, 240, 236, 0.15);
+
+.section {
+  @include vars.section;
+  background: var(--gradient-dark);
+  color: var(--color-stone);
+}
+
+.heading {
+  margin-bottom: vars.$space-12;
+}
+
+.log {
+  border-top: 1px solid $line;
+  list-style: none;
+}
+
+.row {
+  display: grid;
+  gap: vars.$space-2;
+  padding-block: vars.$space-5;
+  border-bottom: 1px solid $line;
+
+  @media (min-width: vars.$breakpoint-tablet) {
+    grid-template-columns: 110px 1fr;
+    gap: vars.$space-6;
+  }
+}
+
+.time {
+  @include vars.display;
+  font-weight: 500;
+  font-size: 1.375rem;
+  color: var(--color-sun);
+}
+
+.text {
+  max-width: 52ch;
+  font-size: 1.1875rem;
+}
+
+.after {
+  max-width: 46ch;
+  margin-top: vars.$space-10;
+  font-size: 1.25rem;
+}

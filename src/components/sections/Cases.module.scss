@@ -1,0 +1,133 @@
+@use "@/styles/variables" as vars;
+
+.section {
+  @include vars.section;
+}
+
+.lead {
+  max-width: 60ch;
+  margin-top: vars.$space-4;
+  color: var(--color-muted);
+}
+
+.grid {
+  display: grid;
+  gap: vars.$space-5;
+  margin-top: vars.$space-12;
+  list-style: none;
+
+  @media (min-width: vars.$breakpoint-tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: vars.$breakpoint-desktop) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.wideItem {
+  grid-column: 1 / -1;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: vars.$space-8;
+  height: 100%;
+  padding: vars.$space-8 vars.$space-6;
+  border: 1px solid var(--color-line);
+  border-radius: vars.$radius-lg;
+  background: var(--color-paper);
+  box-shadow: var(--shadow-soft);
+  transition: transform var(--duration-micro) var(--ease-out);
+
+  @media (hover: hover) {
+    &:hover {
+      transform: translateY(-4px);
+    }
+  }
+}
+
+.wide {
+  border-color: rgba(255, 255, 255, 0.7);
+  background: var(--gradient-soft);
+
+  @media (hover: hover) {
+    &:hover {
+      transform: none;
+    }
+  }
+
+  @media (min-width: vars.$breakpoint-desktop) {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: vars.$space-12;
+    padding: vars.$space-10;
+  }
+}
+
+.main {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: vars.$space-5;
+}
+
+.facts {
+  display: grid;
+  gap: vars.$space-3;
+
+  dt {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--color-sea);
+  }
+
+  dd {
+    font-size: 1rem;
+    color: var(--color-muted);
+  }
+}
+
+.link {
+  align-self: flex-start;
+  margin-top: auto;
+  font-weight: 600;
+  color: var(--color-sea);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+
+  &:hover {
+    color: var(--color-sea-deep);
+  }
+}
+
+.modules {
+  display: grid;
+  gap: vars.$space-5;
+  align-content: start;
+  list-style: none;
+
+  @media (min-width: vars.$breakpoint-tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.module {
+  padding-left: vars.$space-4;
+  border-left: 3px solid;
+  border-image: linear-gradient(180deg, var(--color-sea), var(--color-mint)) 1;
+
+  p {
+    font-size: 0.9375rem;
+    color: var(--color-muted);
+  }
+}
+
+.moduleTitle {
+  margin-bottom: vars.$space-1;
+  font-size: 1rem;
+  font-weight: 600;
+}

@@ -1,0 +1,48 @@
+import { getTranslations } from "next-intl/server";
+
+import { buttonClassName } from "@/components/ui/Button";
+import { ContactButton } from "@/components/ui/ContactButton";
+import { Container } from "@/components/ui/Container";
+import { CONTACT_OPTIONS } from "@/constants/contacts";
+import { SECTION_ID_CONTACT, headingIdOf } from "@/constants/sections";
+import { revealProps } from "@/lib/reveal";
+
+import styles from "./FinalCta.module.scss";
+
+export async function FinalCta() {
+  const t = await getTranslations();
+  const word = t("word");
+  const headingId = headingIdOf(SECTION_ID_CONTACT);
+
+  return (
+    <section
+      id={SECTION_ID_CONTACT}
+      aria-labelledby={headingId}
+      className={styles.section}
+    >
+      <Container>
+        <div className={styles.box} {...revealProps()}>
+          <h2 id={headingId} className={styles.heading}>
+            {t("final.heading")}
+          </h2>
+          <p className={styles.text}>{t("final.text", { word })}</p>
+          {CONTACT_OPTIONS.length > 0 ? (
+            <div className={styles.buttons}>
+              {CONTACT_OPTIONS.map((contact, index) => (
+                <ContactButton
+                  key={contact.channel}
+                  contact={contact}
+                  className={buttonClassName(index === 0 ? "dark" : "outline")}
+                >
+                  {t(`final.${contact.channel}`)}
+                </ContactButton>
+              ))}
+            </div>
+          ) : (
+            <p className={styles.empty}>{t("final.noContacts")}</p>
+          )}
+        </div>
+      </Container>
+    </section>
+  );
+}

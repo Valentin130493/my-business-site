@@ -1,0 +1,12 @@
+@use "@/styles/variables" as vars;
+
+.container {
+  width: 100%;
+  max-width: calc(vars.$container-max-width + vars.$space-6 * 2);
+  margin-inline: auto;
+  padding-inline: vars.$space-4;
+
+  @media (min-width: vars.$breakpoint-tablet) {
+    padding-inline: vars.$space-6;
+  }
+}

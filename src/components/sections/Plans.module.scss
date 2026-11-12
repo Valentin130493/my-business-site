@@ -1,0 +1,164 @@
+@use "@/styles/variables" as vars;
+
+$featured-muted: rgba(31, 54, 51, 0.74);
+$featured-line: rgba(31, 54, 51, 0.14);
+
+.section {
+  @include vars.section;
+  padding-top: 0;
+
+  @media (min-width: vars.$breakpoint-desktop) {
+    padding-top: 0;
+  }
+}
+
+.grid {
+  display: grid;
+  gap: vars.$space-5;
+  margin-top: vars.$space-12;
+
+  @media (min-width: vars.$breakpoint-tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.plan {
+  display: flex;
+  flex-direction: column;
+  gap: vars.$space-6;
+  padding: vars.$space-8;
+  border: 1px solid var(--color-line);
+  border-radius: vars.$radius-lg;
+  background: var(--color-paper);
+  box-shadow: var(--shadow-soft);
+}
+
+.featured {
+  border-color: rgba(255, 255, 255, 0.7);
+  background: var(--gradient-primary);
+}
+
+.header {
+  display: grid;
+  gap: vars.$space-2;
+  padding-bottom: vars.$space-6;
+  border-bottom: 1px solid var(--color-line);
+
+  .featured & {
+    border-bottom-color: $featured-line;
+  }
+}
+
+.nameRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: vars.$space-3;
+}
+
+.name {
+  font-size: 1.25rem;
+}
+
+.badge {
+  padding: vars.$space-1 vars.$space-3;
+  border-radius: vars.$radius-pill;
+  background: var(--color-ink);
+  color: var(--color-butter);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.price {
+  @include vars.display;
+  margin-top: vars.$space-2;
+  font-size: clamp(2.25rem, 4vw, 2.75rem);
+  line-height: 1;
+}
+
+.from {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.monthly {
+  font-size: 0.9375rem;
+  color: var(--color-muted);
+
+  .featured & {
+    color: $featured-muted;
+  }
+}
+
+.what {
+  margin-top: vars.$space-2;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.plus {
+  margin-bottom: -#{vars.$space-3};
+  font-size: 0.875rem;
+  color: var(--color-muted);
+
+  .featured & {
+    color: $featured-muted;
+  }
+}
+
+.points {
+  display: grid;
+  gap: vars.$space-4;
+  list-style: none;
+}
+
+.point {
+  position: relative;
+  padding-left: vars.$space-8;
+  line-height: 1.4;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 6px;
+    width: 6px;
+    height: 12px;
+    border: solid var(--color-sea);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+
+    .featured & {
+      border-color: var(--color-ink);
+    }
+  }
+}
+
+.pointTitle {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.benefit {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.9375rem;
+  color: var(--color-muted);
+
+  .featured & {
+    color: $featured-muted;
+  }
+}
+
+.note {
+  margin-top: auto;
+  padding-top: vars.$space-4;
+  border-top: 1px dashed var(--color-line);
+  font-size: 0.875rem;
+  color: var(--color-muted);
+}

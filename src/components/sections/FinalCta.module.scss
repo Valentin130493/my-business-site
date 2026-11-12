@@ -1,0 +1,56 @@
+@use "@/styles/variables" as vars;
+
+.section {
+  padding-bottom: vars.$space-10;
+  scroll-margin-top: vars.$navbar-height;
+}
+
+.box {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  padding: vars.$space-12 vars.$space-6;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: vars.$radius-lg;
+  background: var(--gradient-soft);
+  box-shadow: var(--shadow-soft);
+
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -30%;
+    right: -10%;
+    width: 60%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(191, 230, 216, 0.9), transparent 65%);
+    pointer-events: none;
+  }
+
+  @media (min-width: vars.$breakpoint-tablet) {
+    padding: vars.$space-20 vars.$space-14;
+  }
+}
+
+.heading {
+  max-width: 20ch;
+  margin-bottom: vars.$space-4;
+}
+
+.text {
+  max-width: 44ch;
+  margin-bottom: vars.$space-8;
+  font-size: 1.25rem;
+  color: var(--color-muted);
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: vars.$space-3;
+}
+
+.empty {
+  color: var(--color-muted);
+}

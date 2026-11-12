@@ -1,0 +1,57 @@
+@use "@/styles/variables" as vars;
+
+.section {
+  @include vars.section;
+  padding-top: 0;
+
+  @media (min-width: vars.$breakpoint-desktop) {
+    padding-top: 0;
+  }
+}
+
+.list {
+  max-width: 820px;
+  margin-top: vars.$space-10;
+  border-top: 1px solid var(--color-line);
+}
+
+.item {
+  border-bottom: 1px solid var(--color-line);
+
+  &[open] .question::after {
+    transform: rotate(45deg);
+  }
+}
+
+.question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: vars.$space-6;
+  padding-block: vars.$space-5;
+  font-weight: 600;
+  font-size: 1.1875rem;
+  cursor: pointer;
+  list-style: none;
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+
+  &::after {
+    content: "+";
+    flex: 0 0 auto;
+    font-family: vars.$font-family-display;
+    font-weight: 500;
+    font-size: 1.75rem;
+    line-height: 1;
+    color: var(--color-sea);
+    transition: transform 200ms var(--ease-out);
+  }
+}
+
+.answer {
+  max-width: 64ch;
+  padding-bottom: vars.$space-6;
+  color: var(--color-muted);
+}

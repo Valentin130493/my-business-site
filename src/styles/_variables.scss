@@ -1,0 +1,49 @@
+$breakpoint-mobile: 520px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+
+$font-family-base:
+  var(--font-sans),
+  -apple-system,
+  BlinkMacSystemFont,
+  "Segoe UI",
+  sans-serif;
+$font-family-display: var(--font-display), $font-family-base;
+
+$space-1: 0.25rem;
+$space-2: 0.5rem;
+$space-3: 0.75rem;
+$space-4: 1rem;
+$space-5: 1.25rem;
+$space-6: 1.5rem;
+$space-8: 2rem;
+$space-10: 2.5rem;
+$space-12: 3rem;
+$space-14: 3.5rem;
+$space-16: 4rem;
+$space-20: 5rem;
+$space-24: 6rem;
+
+$container-max-width: 1168px;
+
+$radius-sm: 14px;
+$radius-lg: 28px;
+$radius-pill: 999px;
+
+$navbar-height: 72px;
+
+@mixin section {
+  padding-block: $space-16;
+  scroll-margin-top: $navbar-height;
+
+  @media (min-width: $breakpoint-desktop) {
+    padding-block: $space-24;
+  }
+}
+
+@mixin display {
+  font-family: $font-family-display;
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+}

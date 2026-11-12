@@ -1,0 +1,256 @@
+{
+  "seo": {
+    "title": "Valentin — AI chatbots that answer your customers 24/7",
+    "description": "Full-stack developer with 5+ years of experience. I build an AI chatbot for your business: it answers customers on Instagram, WhatsApp and Telegram in seconds, books appointments and collects leads. Prices from €100. Working online worldwide."
+  },
+  "brand": "Valentin",
+  "nav": {
+    "label": "Site sections",
+    "skip": "Skip to content",
+    "home": "Back to top",
+    "chooseChannel": "Where would you like to message me?",
+    "features": "About bots",
+    "cases": "Projects",
+    "plans": "Pricing",
+    "steps": "How to start",
+    "about": "About",
+    "faq": "FAQ",
+    "contacts": "Contacts",
+    "write": "Message me",
+    "languages": "Site language"
+  },
+  "word": "AUDIT",
+  "hero": {
+    "title": "There are thousands of ready-made bots. I build one: for your business.",
+    "lead": "It answers your customers in seconds, day and night, books appointments and collects requests. You get ready customers, not endless chats.",
+    "ctaPrimary": "Get a free audit",
+    "ctaSecondary": "See prices",
+    "note": "Send “{word}” in DMs — I’ll look at your business and tell you what to automate first.",
+    "factsLabel": "About me in brief",
+    "facts": [
+      "Full-stack developer, 5+ years",
+      "My own AI chatbot engine",
+      "My own SaaS — dumza.com",
+      "An AI bot that runs a news channel by itself"
+    ]
+  },
+  "chat": {
+    "label": "Example of a customer chatting with the bot",
+    "business": "Beauty studio",
+    "status": "replies instantly",
+    "day": "Today",
+    "result": "Booking request collected in a minute, while everyone was asleep",
+    "messages": [
+      { "from": "client", "time": "23:40", "text": "Good evening! How much is a gel manicure, and where are you located?" },
+      { "from": "bot", "time": "23:40", "text": "Good evening! A gel manicure is €30. We’re in the city centre, next to the bus station, open every day from 10:00 to 20:00. Would you like to book?" },
+      { "from": "client", "time": "23:41", "text": "Yes, tomorrow after 15:00" },
+      { "from": "bot", "time": "23:41", "text": "Noted: gel manicure, tomorrow after 15:00. What’s your name?" },
+      { "from": "client", "time": "23:41", "text": "Anna" },
+      { "from": "bot", "time": "23:41", "text": "Thank you, Anna! Our administrator will confirm the exact time in the morning." }
+    ]
+  },
+  "night": {
+    "heading": "While you’re busy or asleep, customers are writing",
+    "items": [
+      { "time": "23:40", "text": "Someone asked about prices. You replied in the morning, but they had already booked with whoever answered first." },
+      { "time": "14:15", "text": "You’re with a client, phone in your bag. Five identical questions in DMs: “how much” and “any free slots”." },
+      { "time": "09:02", "text": "A client forgot her appointment. The master waited, the slot was lost, and so was the money." }
+    ],
+    "after": "It’s not laziness or bad service. One person simply can’t answer everyone at once. A bot can."
+  },
+  "trend": {
+    "eyebrow": "The trend of late 2026",
+    "heading": "Big companies already work with AI agents. Small and medium businesses are next",
+    "lead": "AI agents are no longer an experiment: at big companies they answer customers, write code and take routine work off employees. Small businesses have barely moved — both McKinsey’s research and US statistics show it. Which means right now you can be the first in your niche.",
+    "statsLabel": "Figures from companies and research",
+    "stats": [
+      { "id": "mckinsey-large", "value": "40%", "text": "of large companies with revenue above $1 billion are scaling AI agents — up from 27% a year earlier", "source": "McKinsey, The state of AI 2026" },
+      { "id": "mckinsey-small", "value": "22%", "text": "among smaller companies — and this share hasn’t grown in a year", "source": "McKinsey, The state of AI 2026" },
+      { "id": "census", "value": "~20%", "text": "of US businesses use AI. The share is growing at larger firms but standing still at firms with fewer than 20 employees", "source": "U.S. Census Bureau, 2026" },
+      { "id": "klarna", "value": "2/3", "text": "of Klarna’s support chats were handled by an AI assistant in its very first month — the work of 700 agents", "source": "Klarna, 2024" }
+    ],
+    "timelineLabel": "It already happened with websites",
+    "timeline": [
+      { "id": "sites", "period": "2014–2015", "text": "A website turns from a luxury into the norm: first big companies have one, then every salon and café.", "isForecast": false, "source": "" },
+      { "id": "big-companies", "period": "2026", "text": "Big companies hand customer support, code and routine work over to AI agents. Small businesses are still watching.", "isForecast": false, "source": "" },
+      { "id": "forecast", "period": "2027+", "text": "An AI assistant will become as essential for small businesses as a website. Gartner expects AI to resolve 80% of common customer service issues on its own by 2029. Those who start early will win the customers.", "isForecast": true, "source": "Gartner, 2025" }
+    ],
+    "forecast": "My forecast"
+  },
+  "features": {
+    "heading": "What kinds of bots there are and what they do",
+    "lead": "A bot is more than an auto-reply. Here’s what you can hand over to it right now — with examples from everyday businesses.",
+    "exampleLabel": "For example",
+    "items": [
+      { "id": "assistant", "title": "Bot administrator", "text": "Answers customer questions 24/7: prices, services, address, opening hours, availability. It only knows your data and never makes things up.", "example": "Beauty salon: at 23:40 a client asks about manicure prices and free slots — the bot replies instantly and offers a time." },
+      { "id": "booking", "title": "Bookings and requests", "text": "Collects name, service, preferred time and contact details. You get a ready request in Telegram or a spreadsheet — without ten clarifying messages.", "example": "Car service: a customer writes the car model and what’s knocking — the mechanic gets a request with a phone number and photos." },
+      { "id": "reminders", "title": "Reminders and win-backs", "text": "Reminds clients about appointments to cut no-shows, and brings back those who asked about prices and disappeared.", "example": "Dental clinic: a day before the visit — a reminder with “Confirm” and “Reschedule” buttons." },
+      { "id": "sales", "title": "Shop assistant", "text": "Picks products for a request, answers about sizes, delivery and payment, and sends links to the right items.", "example": "Clothing store: a shopper sends their height and measurements — the bot suggests a size and links the product." },
+      { "id": "content", "title": "Content on autopilot", "text": "Finds material, writes posts and publishes them on schedule, with automated checks before every post.", "example": "Real estate agency: every morning the channel gets a selection of new listings and market news." },
+      { "id": "reports", "title": "Reports and notifications", "text": "Watches requests, the website and key numbers, and sends a summary or a notification when something goes wrong.", "example": "Café: every evening the owner gets a Telegram message with how many requests came in and from which channels." }
+    ],
+    "baseLabel": "Every bot can:",
+    "base": ["Reply in seconds, day and night", "Speak the customer’s language", "Hand tricky cases and complaints to you", "Work in Telegram, WhatsApp, Instagram, Messenger and website chat"]
+  },
+  "cases": {
+    "heading": "My projects",
+    "lead": "Most of my commercial work is under NDA: IT is a small world, and clients don’t like being shown off. So here is what I built for myself — it shows how I think and what I can do.",
+    "task": "Task",
+    "solution": "What I did",
+    "result": "Result",
+    "link": "See it live",
+    "modules": "What’s inside",
+    "items": [
+      {
+        "id": "bot-engine",
+        "title": "My own AI chatbot engine for businesses",
+        "task": "One codebase for bots of different businesses: answer customers in every messenger, never make things up and never waste the client’s money.",
+        "solution": "The bot works in Telegram, WhatsApp, Instagram, Facebook Messenger and website chat and connects to any AI model. It handles common questions with ready answers without the AI, and the rest strictly from the business description. No answer, or the customer asks for a human — it calls the manager in Telegram.",
+        "result": "A new business is connected without touching the code: its own folder with prices, answers and instructions. A daily per-person question limit protects against unnecessary AI bills."
+      },
+      {
+        "id": "news-bot",
+        "title": "Good-5 — an AI bot that runs a Telegram news channel by itself",
+        "task": "Publish fresh news in Ukrainian and Russian every morning — with no manual work.",
+        "solution": "The system collects about 100 news items a day from 15 sources, picks the 5 best and writes the texts from the originals — separately in each language, not translated from one another.",
+        "result": "Posts go out every morning without me. 255 automated checks run before every release: if any of them fails, nothing gets published. It runs on my own home server."
+      },
+      {
+        "id": "dumza",
+        "title": "Dumza — my own website monitoring SaaS",
+        "task": "A service that checks websites, APIs and servers around the clock and alerts the owner the moment something goes down.",
+        "solution": "Built solo — from architecture to billing and production. SSL certificate, domain and cron job monitoring, public status pages with incident history, Google sign-in and two-factor protection, subscriptions and an admin panel with an audit log. The architecture is ready for checks from different regions of the world.",
+        "result": "Live at dumza.com: alerts via email, Telegram, Slack and webhooks, 8 languages, customers’ sensitive data is encrypted, and the code is covered by a hundred test files."
+      },
+      {
+        "id": "trading-bot",
+        "title": "A trading bot for a crypto exchange",
+        "task": "A learning project where I dug into automation: the system trades on Binance by itself using proven rules, and asks a human wherever judgement is needed.",
+        "solution": "Two parts on one account: the bot trades by the rules on its own, while the radar spots opportunities and leaves the decision to me. Around them — tools for testing strategies and a server that updates itself.",
+        "result": "On historical data the strategy was profitable in all 7 test quarters, even the worst one. The system currently runs on the exchange’s test account.",
+        "modules": [
+          { "title": "Bot", "text": "Trades its own list of coins. Waits for a deep 18% drawdown, buys in a ladder of 6 parts and sells each one separately at +3%. Before entering it waits for confirmation so it doesn’t react to random price spikes." },
+          { "title": "Radar", "text": "Watches a wider list of coins and messages me in Telegram when one drops sharply. It doesn’t buy on its own — I decide, with a button right in the chat. Balance, profit report and open positions are a command away there too. The radar has its own budget so it never touches the bot’s money." },
+          { "title": "Alerts", "text": "If a coin bought via the radar goes into the red, I get a message: when and at what price it was bought, what it’s worth now — and a “Close at market” button. I deliberately didn’t build an automatic stop-loss: the decision stays with a human." },
+          { "title": "Signal journal", "text": "The radar records every signal and later checks where the price went. That shows whether my manual picks help or whether taking every signal would have been better." },
+          { "title": "Strategy testing", "text": "Backtests on history, validation on data the strategy has never seen, a coin ranking and paper trading — before risking any money." },
+          { "title": "Server and safety", "text": "Runs 24/7 on a separate laptop: every 15 minutes it pulls updates, runs the tests, builds and restarts, rolling back on failure. Trades are stored in a database, so restarts break nothing. Real money only with an explicit flag on the server itself." }
+        ]
+      }
+    ]
+  },
+  "plans": {
+    "heading": "Pricing",
+    "from": "from",
+    "featured": "Recommended",
+    "monthly": "+ {price} per month",
+    "items": [
+      {
+        "id": "start",
+        "name": "Start",
+        "what": "Audit of your business",
+        "plus": "",
+        "points": [
+          { "title": "40-minute call", "benefit": "You see where you’re losing customers" },
+          { "title": "Review of your chats", "benefit": "I find what eats up your time" },
+          { "title": "A written plan", "benefit": "Clear where to start and what it costs" }
+        ],
+        "note": "The {price} counts towards the bot if you order one."
+      },
+      {
+        "id": "startPlus",
+        "name": "Start+",
+        "what": "Business audit and automation recommendations",
+        "plus": "Everything in Start, plus:",
+        "points": [
+          { "title": "Automation recommendations", "benefit": "Clear what to automate in your business and how" }
+        ],
+        "note": ""
+      },
+      {
+        "id": "standard",
+        "name": "Standard",
+        "what": "A bot that answers for you",
+        "plus": "",
+        "points": [
+          { "title": "Replies in seconds, even at night", "benefit": "Customers don’t leave for competitors" },
+          { "title": "Knows your prices and services", "benefit": "Answers like your best administrator" },
+          { "title": "Collects requests", "benefit": "You get a ready customer" },
+          { "title": "Hands tricky cases to you", "benefit": "The bot won’t spoil a relationship" },
+          { "title": "Turnkey launch and 2 weeks of edits", "benefit": "You don’t need to figure anything out" }
+        ],
+        "note": ""
+      },
+      {
+        "id": "vip",
+        "name": "VIP",
+        "what": "A sales team on autopilot",
+        "plus": "Everything in Standard, plus:",
+        "points": [
+          { "title": "All channels at once", "benefit": "Instagram, WhatsApp, Telegram, website" },
+          { "title": "Appointment reminders", "benefit": "Fewer no-shows" },
+          { "title": "Bringing back lost customers", "benefit": "Follows up with those who almost bought" },
+          { "title": "All requests in one spreadsheet", "benefit": "Nothing gets lost" },
+          { "title": "Monthly report and improvements", "benefit": "The bot grows with your business" }
+        ],
+        "note": ""
+      }
+    ]
+  },
+  "steps": {
+    "heading": "How to start",
+    "items": [
+      { "title": "Send “{word}”", "text": "In Instagram DMs or on Telegram. Tell me in a couple of words what you do." },
+      { "title": "Free audit", "text": "I’ll look at your business and send you what to automate first and what it costs." },
+      { "title": "Launch", "text": "I set up the bot for you, we test it together and go live. You focus on your work." }
+    ]
+  },
+  "about": {
+    "heading": "Who builds your bot",
+    "tagline": "Me, personally.",
+    "jobTitle": "AI chatbot developer for businesses",
+    "paragraphs": [
+      "I’ve been writing code for more than five years. I’ve built SaaS platforms, admin panels, trading interfaces for a crypto platform and websites for clients. In my last team I ran code reviews and sprint planning for six developers.",
+      "Right now I’m building Dumza on my own — my website monitoring service, from architecture to billing and production. And I build AI chatbots for businesses.",
+      "I know automation from practice: I’ve built my own AI chatbot engine for businesses, a trading bot for a crypto exchange and a system that runs a news channel by itself.",
+      "I don’t assemble bots in a drag-and-drop builder. I write each one for a specific business: your prices, your customers and the way you like to work. That’s why the bot sounds like you, not like an answering machine.",
+      "I work online — with clients from any country where there’s demand."
+    ],
+    "experienceHeading": "Experience",
+    "experience": [
+      { "start": "2023-10", "end": "2026-09", "role": "Full-stack developer", "area": "client projects", "text": "A SaaS sales platform, a backend with an admin panel, marketing websites and a web app. Code reviews and planning for a team of 6 developers." },
+      { "start": "2022-11", "end": "2023-10", "role": "Frontend developer", "area": "crypto platform", "text": "Trading interfaces and user dashboards, a shared interface library for several apps." },
+      { "start": "2021-05", "end": "2022-11", "role": "Full-stack developer", "area": "MVPs and mobile apps", "text": "A media platform MVP built from scratch and a health mobile app." }
+    ],
+    "skillsHeading": "What I do",
+    "skills": [
+      { "title": "AI and automation", "items": ["AI chatbots for Telegram, WhatsApp, Instagram and websites", "automating routine work and business processes", "systems that run without human involvement"] },
+      { "title": "Turnkey products", "items": ["websites and web apps", "SaaS services — from idea to billing and production", "admin panels and customer dashboards", "multilingual interfaces"] },
+      { "title": "Reliability", "items": ["automated checks before every release", "monitoring and outage alerts", "protection of data and access"] }
+    ],
+    "languagesHeading": "Languages",
+    "languages": "Ukrainian and Russian — native, English — B2"
+  },
+  "faq": {
+    "heading": "Frequently asked questions",
+    "items": [
+      { "question": "Who will build the bot?", "answer": "I do, personally — from the first conversation to launch and edits. I don’t pass your project to subcontractors or assemble the bot in a builder, so you always know who’s responsible for the result." },
+      { "question": "How much does the bot cost per month after launch?", "answer": "Hosting and AI usage are paid separately, and it’s usually not much. I’ll give you the exact amount before we start: I run typical conversations for your business and calculate the usage. Bills go straight to you, with no markup from me." },
+      { "question": "What if the bot tells a customer something wrong?", "answer": "The bot only knows what you’ve told it about your business. If it doesn’t have the answer, it doesn’t make things up — it hands the chat to you. Unhappy customers and tricky questions also go straight to a human." },
+      { "question": "How long does the launch take?", "answer": "It depends on the task. A simple bot for one messenger usually takes up to two weeks, including testing." },
+      { "question": "Do I need any technical knowledge?", "answer": "No. I set everything up and launch it. From you I need prices, services and answers to common questions — in plain text." },
+      { "question": "Can I change prices or services later?", "answer": "Yes. Edits are free during the first two weeks; after that, by agreement or as part of VIP." }
+    ]
+  },
+  "final": {
+    "heading": "Recognise your business?",
+    "text": "Send “{word}” — I’ll look at where you’re losing customers for free and tell you what to automate first.",
+    "instagram": "Message on Instagram",
+    "telegram": "Message on Telegram",
+    "noContacts": "Contact details will appear here soon."
+  },
+  "footer": {
+    "line": "AI chatbots for business",
+    "copyright": "© {year}"
+  }
+}

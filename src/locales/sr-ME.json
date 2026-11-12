@@ -1,0 +1,256 @@
+{
+  "seo": {
+    "title": "Valentin — AI chatbotovi za biznis koji odgovaraju klijentima 24/7",
+    "description": "Full-stack programer sa više od 5 godina iskustva. Pravim AI chatbota za vaš biznis: odgovara klijentima na Instagramu, WhatsAppu i Telegramu za nekoliko sekundi, zakazuje termine i prikuplja upite. Cijene od 100 €. Radim online širom svijeta."
+  },
+  "brand": "Valentin",
+  "nav": {
+    "label": "Sekcije sajta",
+    "skip": "Preskoči na sadržaj",
+    "home": "Na vrh",
+    "chooseChannel": "Gdje vam je zgodnije da pišete?",
+    "features": "O botovima",
+    "cases": "Projekti",
+    "plans": "Cijene",
+    "steps": "Kako početi",
+    "about": "O meni",
+    "faq": "Pitanja",
+    "contacts": "Kontakti",
+    "write": "Pišite mi",
+    "languages": "Jezik sajta"
+  },
+  "word": "ANALIZA",
+  "hero": {
+    "title": "Gotovih botova ima na hiljade. Ja pravim jednog: za vaš biznis.",
+    "lead": "Odgovara vašim klijentima za nekoliko sekundi, danju i noću, zakazuje termine i prikuplja upite. Vi dobijate spremne klijente, a ne beskrajne poruke.",
+    "ctaPrimary": "Besplatna analiza",
+    "ctaSecondary": "Pogledajte cijene",
+    "note": "Pošaljite „{word}” u DM — pogledaću vaš biznis i reći vam šta prvo da automatizujete.",
+    "factsLabel": "Ukratko o meni",
+    "facts": [
+      "Full-stack programer, 5+ godina",
+      "Moja platforma za AI chatbotove",
+      "Moj SaaS — dumza.com",
+      "AI bot koji sam vodi vijesti"
+    ]
+  },
+  "chat": {
+    "label": "Primjer prepiske klijenta sa botom",
+    "business": "Salon ljepote",
+    "status": "odgovara odmah",
+    "day": "Danas",
+    "result": "Upit prikupljen za minut, dok su svi spavali",
+    "messages": [
+      { "from": "client", "time": "23:40", "text": "Dobro veče! Koliko košta gel manikir i gdje se nalazite?" },
+      { "from": "bot", "time": "23:40", "text": "Dobro veče! Gel manikir košta 30 €. Nalazimo se u centru, pored autobuske stanice, radimo svaki dan od 10 do 20h. Želite li da zakažete?" },
+      { "from": "client", "time": "23:41", "text": "Da, za sjutra poslije 15h" },
+      { "from": "bot", "time": "23:41", "text": "Zapisujem: gel manikir, sjutra poslije 15h. Kako se zovete?" },
+      { "from": "client", "time": "23:41", "text": "Ana" },
+      { "from": "bot", "time": "23:41", "text": "Hvala, Ana! Administratorka će ujutru potvrditi tačno vrijeme." }
+    ]
+  },
+  "night": {
+    "heading": "Dok ste zauzeti ili spavate, klijenti pišu",
+    "items": [
+      { "time": "23:40", "text": "Pitali su za cijenu. Odgovorili ste ujutru, ali je osoba već zakazala kod onih koji su se javili prije." },
+      { "time": "14:15", "text": "Sa klijentom ste, telefon je u torbi. U porukama pet istih pitanja: „koliko košta” i „ima li slobodan termin”." },
+      { "time": "09:02", "text": "Klijentkinja je zaboravila na termin. Majstor je čekao, termin je propao, a s njim i novac." }
+    ],
+    "after": "To nije lijenost niti loša usluga. Jedna osoba jednostavno ne može da odgovori svima odjednom. Bot može."
+  },
+  "trend": {
+    "eyebrow": "Trend s kraja 2026.",
+    "heading": "Velike kompanije već rade sa AI agentima. Srednji i mali biznis je sljedeći",
+    "lead": "AI agenti više nisu eksperiment: u velikim kompanijama odgovaraju klijentima, pišu kod i rasterećuju zaposlene. A mali biznis se skoro nije pomjerio — to pokazuju i istraživanje McKinseyja i statistika SAD-a. Znači, upravo sada možete biti prvi u svojoj niši.",
+    "statsLabel": "Brojke kompanija i istraživanja",
+    "stats": [
+      { "id": "mckinsey-large", "value": "40%", "text": "velikih kompanija sa prihodom preko milijardu dolara širi upotrebu AI agenata — prije godinu dana bilo je 27%", "source": "McKinsey, The state of AI 2026" },
+      { "id": "mckinsey-small", "value": "22%", "text": "kod manjih kompanija — i za godinu dana taj udio nije porastao", "source": "McKinsey, The state of AI 2026" },
+      { "id": "census", "value": "~20%", "text": "kompanija u SAD-u koristi AI. Kod većih udio raste, a kod firmi do 20 zaposlenih stoji u mjestu", "source": "U.S. Census Bureau, 2026" },
+      { "id": "klarna", "value": "2/3", "text": "chatova podrške u Klarni riješio je AI asistent već u prvom mjesecu — posao 700 zaposlenih", "source": "Klarna, 2024" }
+    ],
+    "timelineLabel": "Isto se već desilo sa sajtovima",
+    "timeline": [
+      { "id": "sites", "period": "2014–2015", "text": "Sajt od luksuza postaje normalna stvar: prvo ga imaju velike kompanije, a zatim svaki salon i kafić.", "isForecast": false, "source": "" },
+      { "id": "big-companies", "period": "2026", "text": "Velike kompanije prepuštaju AI agentima podršku klijentima, kod i rutinske poslove. Mali biznis za sada posmatra.", "isForecast": false, "source": "" },
+      { "id": "forecast", "period": "2027+", "text": "AI asistent će za mali biznis postati obavezan kao i sajt. Gartner očekuje da će do 2029. AI sam rješavati 80% uobičajenih upita klijenata. Ko počne ranije, preuzeće klijente.", "isForecast": true, "source": "Gartner, 2025" }
+    ],
+    "forecast": "Moja prognoza"
+  },
+  "features": {
+    "heading": "Kakvi botovi postoje i šta mogu",
+    "lead": "Bot nije samo automatska sekretarica. Evo šta mu možete prepustiti već sada — uz primjere iz običnog biznisa.",
+    "exampleLabel": "Na primjer",
+    "items": [
+      { "id": "assistant", "title": "Bot-administrator", "text": "Odgovara na pitanja klijenata 24/7: cijene, usluge, adresa, radno vrijeme, dostupnost. Zna samo vaše podatke i ništa ne izmišlja.", "example": "Salon ljepote: u 23:40 klijentkinja pita cijenu manikira i slobodne termine — bot odmah odgovara i nudi vrijeme." },
+      { "id": "booking", "title": "Zakazivanje i upiti", "text": "Sam prikuplja ime, uslugu, odgovarajuće vrijeme i kontakt. Stiže vam gotov upit na Telegram ili u tabelu — bez deset dodatnih poruka.", "example": "Auto servis: klijent piše marku auta i šta lupa — majstor dobija upit sa brojem telefona i fotografijama." },
+      { "id": "reminders", "title": "Podsjetnici i vraćanje klijenata", "text": "Podsjeća na termin da bi bilo manje propuštenih dolazaka i vraća one koji su pitali za cijenu pa nestali.", "example": "Stomatološka ordinacija: dan prije termina — podsjetnik sa dugmadima „Potvrđujem” i „Pomjeri termin”." },
+      { "id": "sales", "title": "Savjetnik u prodavnici", "text": "Bira proizvode po upitu, odgovara o veličinama, dostavi i plaćanju i šalje linkove na prave artikle.", "example": "Prodavnica odjeće: kupac pošalje visinu i mjere — bot savjetuje veličinu i daje link na proizvod." },
+      { "id": "content", "title": "Sadržaj na autopilotu", "text": "Sam pronalazi materijale, piše objave i objavljuje ih po rasporedu. Prije objave — automatske provjere.", "example": "Agencija za nekretnine: svakog jutra u kanalu — izbor novih nekretnina i vijesti sa tržišta." },
+      { "id": "reports", "title": "Izvještaji i obavještenja", "text": "Prati upite, sajt i važne brojke i šalje pregled ili obavještenje kad nešto krene naopako.", "example": "Kafić: svako veče vlasniku na Telegram — koliko je upita stiglo tog dana i iz kojih kanala." }
+    ],
+    "baseLabel": "Svaki bot može da:",
+    "base": ["Odgovori za nekoliko sekundi, danju i noću", "Govori jezikom klijenta", "Teška pitanja i žalbe proslijedi vama", "Radi na Telegramu, WhatsAppu, Instagramu, Messengeru i u chatu na sajtu"]
+  },
+  "cases": {
+    "heading": "Moji projekti",
+    "lead": "Većina komercijalnih projekata je pod NDA: IT svijet je mali, a klijenti ne vole da ih se pokazuje. Zato su ovdje projekti koje sam napravio za sebe — iz njih se vidi kako razmišljam i šta znam.",
+    "task": "Zadatak",
+    "solution": "Šta sam uradio",
+    "result": "Rezultat",
+    "link": "Pogledajte uživo",
+    "modules": "Od čega se sastoji",
+    "items": [
+      {
+        "id": "bot-engine",
+        "title": "Moja platforma za AI chatbotove za biznis",
+        "task": "Jedan kod za botove različitih biznisa: da odgovara klijentima u svim messengerima, ništa ne izmišlja i ne troši novac klijenta uzalud.",
+        "solution": "Bot radi na Telegramu, WhatsAppu, Instagramu, Facebook Messengeru i u chatu na sajtu i povezuje se sa bilo kojom neuronskom mrežom. Česta pitanja rješava gotovim odgovorima bez AI-ja, a ostala samo na osnovu opisa biznisa. Ako nema odgovor ili klijent traži čovjeka — zove menadžera na Telegramu.",
+        "result": "Novi biznis se povezuje bez izmjene koda: sopstveni folder sa cijenama, odgovorima i uputstvima. Dnevni limit pitanja po osobi štiti od nepotrebnih računa za AI."
+      },
+      {
+        "id": "news-bot",
+        "title": "Good-5 — AI bot koji sam vodi Telegram kanal sa vijestima",
+        "task": "Svakog jutra objavljivati svježe vijesti na ukrajinskom i ruskom — bez ručnog rada.",
+        "solution": "Sistem dnevno prikupi oko 100 vijesti iz 15 izvora, izabere 5 najboljih i piše tekstove prema originalima — posebno na svakom jeziku, a ne prevodom jednog s drugog.",
+        "result": "Objave izlaze svakog jutra bez mog učešća. Prije svakog izdanja prolazi 255 automatskih provjera: ako ijedna ne prođe, ništa se ne objavljuje. Radi na mom kućnom serveru."
+      },
+      {
+        "id": "dumza",
+        "title": "Dumza — moj SaaS za praćenje sajtova",
+        "task": "Servis koji non-stop provjerava sajtove, API-je i servere i odmah javlja vlasniku ako nešto padne.",
+        "solution": "Napravio sam ga sam — od arhitekture do naplate i produkcije. Praćenje SSL sertifikata, domena i cron zadataka, javne statusne stranice sa istorijom incidenata, prijava preko Google-a i dvofaktorska zaštita, pretplate i admin panel sa dnevnikom aktivnosti. Arhitektura je spremna za provjere iz različitih regiona svijeta.",
+        "result": "Radi na dumza.com: obavještenja putem emaila, Telegrama, Slacka i webhookova, 8 jezika, osjetljivi podaci klijenata su šifrovani, a kod je pokriven sa stotinu fajlova testova."
+      },
+      {
+        "id": "trading-bot",
+        "title": "Bot za trgovanje na kripto berzi",
+        "task": "Projekat za učenje na kojem sam se upoznao sa automatizacijom: sistem sam trguje na Binanceu po provjerenim pravilima, a tamo gdje treba razmisliti — pita čovjeka.",
+        "solution": "Dva dijela na jednom nalogu: bot sam trguje po pravilima, a radar pronalazi prilike i odluku ostavlja meni. Oko njih su alati za provjeru strategija i server koji se sam ažurira.",
+        "result": "Na istorijskim podacima strategija je u plusu u svih 7 kvartala provjere, čak i u najgorem. Trenutno sistem radi na test nalogu berze.",
+        "modules": [
+          { "title": "Bot", "text": "Sam trguje po svojoj listi kovanica. Čeka dubok pad od 18%, kupuje postepeno u 6 dijelova i prodaje svaki posebno sa zaradom od 3%. Prije ulaska čeka potvrdu, da ne bi reagovao na slučajne skokove cijene." },
+          { "title": "Radar", "text": "Prati širu listu kovanica i javlja mi na Telegramu kad neka naglo padne. Sam ne kupuje — odlučujem ja, dugmetom u chatu. Tu su i komande za stanje, izvještaj o zaradi i otvorene pozicije. Radar ima svoj budžet da ne dira novac bota." },
+          { "title": "Upozorenja", "text": "Ako kovanica kupljena preko radara ode u minus, stiže poruka: kada i po kojoj cijeni je kupljena, koliko vrijedi sada — i dugme „Zatvori po tržišnoj cijeni”. Automatski stop-loss namjerno nisam pravio: odluka ostaje čovjeku." },
+          { "title": "Dnevnik signala", "text": "Radar bilježi svaki signal i kasnije provjerava kuda je cijena otišla. Tako se vidi da li moj ručni izbor pomaže ili bi bilo bolje uzeti sve redom." },
+          { "title": "Provjera strategija", "text": "Backtest na istoriji, provjera na podacima koje strategija nije vidjela, rangiranje kovanica i trgovanje na papiru — prije nego što se rizikuje novac." },
+          { "title": "Server i zaštita", "text": "Radi non-stop na posebnom laptopu: svakih 15 minuta sam preuzima izmjene, pokreće testove, gradi se i restartuje, a u slučaju greške se vraća. Trgovine se čuvaju u bazi, pa restart ništa ne kvari. Na pravi novac — samo uz izričitu oznaku na samom serveru." }
+        ]
+      }
+    ]
+  },
+  "plans": {
+    "heading": "Cijene",
+    "from": "od",
+    "featured": "Preporučujem",
+    "monthly": "+ {price} mjesečno",
+    "items": [
+      {
+        "id": "start",
+        "name": "Start",
+        "what": "Analiza vašeg biznisa",
+        "plus": "",
+        "points": [
+          { "title": "Poziv od 40 minuta", "benefit": "Vidi se gdje gubite klijente" },
+          { "title": "Analiza vaših poruka", "benefit": "Pronalazim šta vam oduzima vrijeme" },
+          { "title": "Plan na papiru", "benefit": "Jasno je odakle početi i koliko košta" }
+        ],
+        "note": "{price} se uračunava ako naručite bota."
+      },
+      {
+        "id": "startPlus",
+        "name": "Start+",
+        "what": "Analiza biznisa i preporuke za automatizaciju",
+        "plus": "Sve iz paketa Start, plus:",
+        "points": [
+          { "title": "Preporuke za automatizaciju", "benefit": "Jasno je šta i kako da automatizujete u svom biznisu" }
+        ],
+        "note": ""
+      },
+      {
+        "id": "standard",
+        "name": "Standard",
+        "what": "Bot koji odgovara umjesto vas",
+        "plus": "",
+        "points": [
+          { "title": "Odgovor za sekunde, i noću", "benefit": "Klijent ne odlazi kod konkurencije" },
+          { "title": "Zna vaše cijene i usluge", "benefit": "Odgovara kao najbolji administrator" },
+          { "title": "Prikuplja upite", "benefit": "Dobijate spremnog klijenta" },
+          { "title": "Teška pitanja prosljeđuje vama", "benefit": "Bot neće pokvariti odnos sa klijentom" },
+          { "title": "Pokretanje po sistemu ključ u ruke i 2 nedjelje izmjena", "benefit": "Ne morate ništa da učite" }
+        ],
+        "note": ""
+      },
+      {
+        "id": "vip",
+        "name": "VIP",
+        "what": "Prodaja na autopilotu",
+        "plus": "Sve iz paketa Standard, plus:",
+        "points": [
+          { "title": "Svi kanali odjednom", "benefit": "Instagram, WhatsApp, Telegram, sajt" },
+          { "title": "Podsjetnici za termine", "benefit": "Manje propuštenih termina" },
+          { "title": "Vraćanje izgubljenih klijenata", "benefit": "Javlja se onima koji su skoro kupili" },
+          { "title": "Svi upiti u jednoj tabeli", "benefit": "Ništa se ne gubi" },
+          { "title": "Mjesečni izvještaj i dorade", "benefit": "Bot raste zajedno sa biznisom" }
+        ],
+        "note": ""
+      }
+    ]
+  },
+  "steps": {
+    "heading": "Kako početi",
+    "items": [
+      { "title": "Pošaljite „{word}”", "text": "U DM na Instagramu ili na Telegramu. Napišite u par riječi čime se bavite." },
+      { "title": "Besplatna analiza", "text": "Pogledaću vaš biznis i poslati šta prvo da automatizujete i koliko to košta." },
+      { "title": "Pokretanje", "text": "Podešavam bota za vas, zajedno testiramo i pokrećemo. Vi se bavite svojim poslom." }
+    ]
+  },
+  "about": {
+    "heading": "Ko pravi vašeg bota",
+    "tagline": "Ja, lično.",
+    "jobTitle": "Programer AI chatbotova za biznis",
+    "paragraphs": [
+      "Pišem kod više od pet godina. Pravio sam SaaS platforme, admin panele, interfejse za trgovanje za kripto platformu i sajtove za klijente. U posljednjem timu sam vodio code review i planiranje sprintova za šest programera.",
+      "Trenutno sam razvijam Dumzu — svoj servis za praćenje sajtova, od arhitekture do naplate i produkcije. I pravim AI chatbotove za biznis.",
+      "Automatizaciju poznajem iz prakse: napravio sam svoju platformu za AI chatbotove za biznis, bota za trgovanje na kripto berzi i sistem koji sam vodi kanal sa vijestima.",
+      "Ne sklapam botove u gotovim alatima. Svakog pišem za konkretan biznis: za vaše cijene, vaše klijente i način na koji ste navikli da radite. Zato bot zvuči kao vi, a ne kao automatska sekretarica.",
+      "Radim online — sa klijentima iz bilo koje zemlje gdje postoji potražnja."
+    ],
+    "experienceHeading": "Iskustvo",
+    "experience": [
+      { "start": "2023-10", "end": "2026-09", "role": "Full-stack programer", "area": "projekti za klijente", "text": "SaaS platforma za prodaju, backend sa admin panelom, marketinški sajtovi i web aplikacija. Code review i planiranje za tim od 6 programera." },
+      { "start": "2022-11", "end": "2023-10", "role": "Frontend programer", "area": "kripto platforma", "text": "Interfejsi za trgovanje i korisnički nalozi, zajednička biblioteka interfejsa za više aplikacija." },
+      { "start": "2021-05", "end": "2022-11", "role": "Full-stack programer", "area": "MVP i mobilne aplikacije", "text": "MVP medijske platforme od nule i mobilna aplikacija o zdravlju." }
+    ],
+    "skillsHeading": "Šta znam",
+    "skills": [
+      { "title": "AI i automatizacija", "items": ["AI chatbotovi za Telegram, WhatsApp, Instagram i sajt", "automatizacija rutine i poslovnih procesa", "sistemi koji rade bez učešća čovjeka"] },
+      { "title": "Proizvodi po sistemu ključ u ruke", "items": ["sajtovi i web aplikacije", "SaaS servisi — od ideje do naplate i produkcije", "admin paneli i korisnički nalozi", "višejezični interfejsi"] },
+      { "title": "Pouzdanost", "items": ["automatske provjere prije svakog izdanja", "praćenje i obavještenja o kvarovima", "zaštita podataka i pristupa"] }
+    ],
+    "languagesHeading": "Jezici",
+    "languages": "Ukrajinski i ruski — maternji, engleski — B2"
+  },
+  "faq": {
+    "heading": "Česta pitanja",
+    "items": [
+      { "question": "Ko će praviti bota?", "answer": "Ja, lično — od prvog razgovora do pokretanja i izmjena. Ne prepuštam projekat podizvođačima i ne sklapam bota u gotovim alatima, pa uvijek znate ko je odgovoran za rezultat." },
+      { "question": "Koliko bot košta mjesečno nakon pokretanja?", "answer": "Server i rad AI-ja plaćaju se posebno i obično to nije mnogo. Tačan iznos reći ću prije početka rada: provučem tipične razgovore vašeg biznisa i izračunam potrošnju. Računi stižu direktno vama, bez moje marže." },
+      { "question": "Šta ako bot klijentu odgovori nešto pogrešno?", "answer": "Bot zna samo ono što ste mu rekli o svom biznisu. Ako nema odgovor, ne izmišlja, već prosljeđuje razgovor vama. Nezadovoljne klijente i teška pitanja takođe odmah predaje čovjeku." },
+      { "question": "Koliko traje pokretanje?", "answer": "Zavisi od zadatka. Jednostavan bot za jedan messenger obično je gotov za najviše dvije nedjelje, uključujući testiranje." },
+      { "question": "Da li moram nešto da znam o tehnici?", "answer": "Ne. Ja sve podešavam i pokrećem. Od vas trebaju cijene, usluge i odgovori na česta pitanja — običnim tekstom." },
+      { "question": "Mogu li kasnije da promijenim cijene ili usluge?", "answer": "Da. Prve dvije nedjelje izmjene su besplatne, a kasnije po dogovoru ili u okviru VIP paketa." }
+    ]
+  },
+  "final": {
+    "heading": "Prepoznali ste svoj biznis?",
+    "text": "Pošaljite „{word}” — besplatno ću pogledati gdje gubite klijente i poslati šta prvo možete da automatizujete.",
+    "instagram": "Pišite na Instagramu",
+    "telegram": "Pišite na Telegramu",
+    "noContacts": "Kontakti će se uskoro pojaviti ovdje."
+  },
+  "footer": {
+    "line": "AI chatbotovi za biznis",
+    "copyright": "© {year}"
+  }
+}

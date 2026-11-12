@@ -1,0 +1,53 @@
+@use "@/styles/variables" as vars;
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 26px;
+  border: 1.5px solid transparent;
+  border-radius: vars.$radius-pill;
+  font-weight: 600;
+  font-size: 1.0625rem;
+  line-height: 1;
+  text-align: center;
+  transition:
+    transform var(--duration-micro) var(--ease-out),
+    background-color var(--duration-micro) var(--ease-out);
+
+  @media (hover: hover) {
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  @media (max-width: vars.$breakpoint-mobile) {
+    width: 100%;
+  }
+}
+
+.primary {
+  background: var(--gradient-primary);
+  color: var(--color-ink);
+  box-shadow: var(--shadow-soft);
+}
+
+.outline {
+  border-color: var(--color-ink);
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--color-paper);
+    }
+  }
+}
+
+.dark {
+  background-color: var(--color-ink);
+  color: var(--color-stone);
+  box-shadow: var(--shadow-soft);
+}
