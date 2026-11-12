@@ -26,7 +26,7 @@
     "title": "There are thousands of ready-made bots. I build one: for your business.",
     "lead": "It answers your customers in seconds, day and night, books appointments and collects requests. You get ready customers, not endless chats.",
     "badge": "AI chatbots for small and medium businesses",
-    "founderLine": "I build every bot myself: 5+ years in development, my own AI chatbot engine and the website monitoring service Dumza.",
+    "founderLine": "I lead every project myself: 5+ years in development, my own AI chatbot engine and the website monitoring service Dumza.",
     "ctaPrimary": "Discuss your bot",
     "ctaSecondary": "See prices",
     "calcLink": "Calculate how many customers you lose"
@@ -102,8 +102,8 @@
   },
   "founder": {
     "initial": "V",
-    "heading": "Who builds your bot — me, personally",
-    "text": "From the first conversation to launch and edits. No subcontractors, no drag-and-drop builders.",
+    "heading": "Who builds your bot — me and my team",
+    "text": "I lead your project from the first conversation to launch and edits, and I’m responsible for the result. No drag-and-drop builders — every bot is written for your business.",
     "link": "More about me"
   },
   "aboutPage": {
@@ -240,7 +240,7 @@
   },
   "about": {
     "heading": "Who builds your bot",
-    "tagline": "Me, personally.",
+    "tagline": "Me and my team.",
     "jobTitle": "AI chatbot developer for businesses",
     "paragraphs": [
       "I’ve been writing code for more than five years. I’ve built SaaS platforms, admin panels, trading interfaces for a crypto platform and websites for clients. In my last team I ran code reviews and sprint planning for six developers.",
@@ -267,7 +267,7 @@
   "faq": {
     "heading": "Frequently asked questions",
     "items": [
-      { "question": "Who will build the bot?", "answer": "I do, personally — from the first conversation to launch and edits. I don’t pass your project to subcontractors or assemble the bot in a builder, so you always know who’s responsible for the result." },
+      { "question": "Who will build the bot?", "answer": "Me and my team. I lead the project from the first conversation to launch and edits and stay in touch with you myself, so you always know who’s responsible for the result. We don’t assemble bots in builders — every bot is written for your business." },
       { "question": "How much does the bot cost per month after launch?", "answer": "Hosting and AI usage are paid separately, and it’s usually not much. I’ll give you the exact amount before we start: I run typical conversations for your business and calculate the usage. Bills go straight to you, with no markup from me." },
       { "question": "What if the bot tells a customer something wrong?", "answer": "The bot only knows what you’ve told it about your business. If it doesn’t have the answer, it doesn’t make things up — it hands the chat to you. Unhappy customers and tricky questions also go straight to a human." },
       { "question": "How long does the launch take?", "answer": "It depends on the task. A simple bot for one messenger usually takes up to two weeks, including testing." },

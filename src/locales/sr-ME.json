@@ -26,7 +26,7 @@
     "title": "Gotovih botova ima na hiljade. Ja pravim jednog: za vaš biznis.",
     "lead": "Odgovara vašim klijentima za nekoliko sekundi, danju i noću, zakazuje termine i prikuplja upite. Vi dobijate spremne klijente, a ne beskrajne poruke.",
     "badge": "AI chatbotovi za mali i srednji biznis",
-    "founderLine": "Svakog bota pravim sam: 5+ godina u razvoju, svoja platforma za AI chatbotove i servis za praćenje sajtova Dumza.",
+    "founderLine": "Svaki projekat vodim lično: 5+ godina u razvoju, svoja platforma za AI chatbotove i servis za praćenje sajtova Dumza.",
     "ctaPrimary": "Razgovarajmo o botu",
     "ctaSecondary": "Pogledajte cijene",
     "calcLink": "Izračunajte koliko klijenata gubite"
@@ -102,8 +102,8 @@
   },
   "founder": {
     "initial": "V",
-    "heading": "Ko pravi vašeg bota — ja, lično",
-    "text": "Od prvog razgovora do pokretanja i izmjena. Bez podizvođača i gotovih alata.",
+    "heading": "Ko pravi vašeg bota — ja i moj tim",
+    "text": "Vodim projekat od prvog razgovora do pokretanja i izmjena i odgovoran sam za rezultat. Bez gotovih alata — svakog bota pišemo za vaš biznis.",
     "link": "Više o meni"
   },
   "aboutPage": {
@@ -240,7 +240,7 @@
   },
   "about": {
     "heading": "Ko pravi vašeg bota",
-    "tagline": "Ja, lično.",
+    "tagline": "Ja i moj tim.",
     "jobTitle": "Programer AI chatbotova za biznis",
     "paragraphs": [
       "Pišem kod više od pet godina. Pravio sam SaaS platforme, admin panele, interfejse za trgovanje za kripto platformu i sajtove za klijente. U posljednjem timu sam vodio code review i planiranje sprintova za šest programera.",
@@ -267,7 +267,7 @@
   "faq": {
     "heading": "Česta pitanja",
     "items": [
-      { "question": "Ko će praviti bota?", "answer": "Ja, lično — od prvog razgovora do pokretanja i izmjena. Ne prepuštam projekat podizvođačima i ne sklapam bota u gotovim alatima, pa uvijek znate ko je odgovoran za rezultat." },
+      { "question": "Ko će praviti bota?", "answer": "Ja i moj tim. Vodim projekat od prvog razgovora do pokretanja i izmjena i lično sam u kontaktu s vama, pa uvijek znate ko je odgovoran za rezultat. Bota ne sklapamo u gotovim alatima — pišemo ga za vaš biznis." },
       { "question": "Koliko bot košta mjesečno nakon pokretanja?", "answer": "Server i rad AI-ja plaćaju se posebno i obično to nije mnogo. Tačan iznos reći ću prije početka rada: provučem tipične razgovore vašeg biznisa i izračunam potrošnju. Računi stižu direktno vama, bez moje marže." },
       { "question": "Šta ako bot klijentu odgovori nešto pogrešno?", "answer": "Bot zna samo ono što ste mu rekli o svom biznisu. Ako nema odgovor, ne izmišlja, već prosljeđuje razgovor vama. Nezadovoljne klijente i teška pitanja takođe odmah predaje čovjeku." },
       { "question": "Koliko traje pokretanje?", "answer": "Zavisi od zadatka. Jednostavan bot za jedan messenger obično je gotov za najviše dvije nedjelje, uključujući testiranje." },
