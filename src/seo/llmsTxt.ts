@@ -1,6 +1,7 @@
 import type { getTranslations } from "next-intl/server";
 
 import {
+  ABOUT_PATH,
   LOCALE_LABELS,
   SUPPORTED_LOCALES,
   localePath,
@@ -36,7 +37,8 @@ export function buildLlmsTxt(t: Translator, locale: SiteLocale): string {
   const blocks = [
     `# ${t("seo.title")}`,
     `> ${t("seo.description")}`,
-    buildAbout(t),
+    buildPages(t, locale),
+    buildAbout(t, locale),
     buildCases(t),
     buildPlans(t, locale),
     buildFeatures(t),
@@ -53,13 +55,27 @@ function bulletList(items: string[]): string {
   return items.map((item) => `- ${item}`).join("\n");
 }
 
-function buildAbout(t: Translator): string {
+function pageUrl(locale: SiteLocale, path = ""): string {
+  return `${SITE_URL}${localePath(locale, path)}`;
+}
+
+function buildPages(t: Translator, locale: SiteLocale): string {
+  return [
+    `## ${t("seo.pages")}`,
+    bulletList([
+      `[${t("seo.title")}](${pageUrl(locale)})`,
+      `[${t("aboutPage.title")}](${pageUrl(locale, ABOUT_PATH)}): ${t("aboutPage.description")}`,
+    ]),
+  ].join(BLOCK_SEPARATOR);
+}
+
+function buildAbout(t: Translator, locale: SiteLocale): string {
   const experience = t.raw("about.experience") as Experience[];
   const skills = t.raw("about.skills") as SkillGroup[];
 
   return [
     `## ${t("nav.about")}`,
-    `${t("brand")}: ${t("about.jobTitle")}.`,
+    `${t("brand")}: ${t("about.jobTitle")}. ${pageUrl(locale, ABOUT_PATH)}`,
     ...(t.raw("about.paragraphs") as string[]),
     `### ${t("about.experienceHeading")}`,
     bulletList(
@@ -141,7 +157,7 @@ function buildFeatures(t: Translator): string {
     bulletList(
       items.map((item) => `${item.title}: ${item.text} ${exampleLabel}: ${item.example}`),
     ),
-    `${t("features.baseLabel")}: ${base.join("; ")}.`,
+    `${t("features.baseLabel")} ${base.join("; ")}.`,
   ].join(BLOCK_SEPARATOR);
 }
 
@@ -206,13 +222,13 @@ function buildFaq(t: Translator): string {
 function buildContacts(t: Translator, locale: SiteLocale): string {
   return [
     `## ${t("nav.contacts")}`,
-    `${t("nav.write")}: ${SITE_URL}${localePath(locale)}#${SECTION_ID_CONTACT}`,
+    `${t("nav.write")}: ${pageUrl(locale)}#${SECTION_ID_CONTACT}`,
   ].join(BLOCK_SEPARATOR);
 }
 
 function buildLanguageVersions(t: Translator): string {
   const links = SUPPORTED_LOCALES.map(
-    (locale) => `[${LOCALE_LABELS[locale]}](${SITE_URL}${localePath(locale)})`,
+    (locale) => `${LOCALE_LABELS[locale]}: ${pageUrl(locale)}, ${pageUrl(locale, ABOUT_PATH)}`,
   );
   return [`## ${t("nav.languages")}`, bulletList(links)].join(BLOCK_SEPARATOR);
 }

@@ -54,22 +54,24 @@ export async function MarketChart({ locale }: { locale: string }) {
           </span>
         ))}
       </div>
-      <table className="sr-only">
-        <caption>
-          {t("title")}, {t("unit")}
-        </caption>
-        <tbody>
-          {AI_AGENTS_MARKET.map((point) => (
-            <tr key={point.year}>
-              <th scope="row">
-                {point.year}
-                {point.isForecast ? ` (${t("forecast")})` : ""}
-              </th>
-              <td>{number.format(point.billionsUsd)}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <div className="sr-only">
+        <table>
+          <caption>
+            {t("title")}, {t("unit")}
+          </caption>
+          <tbody>
+            {AI_AGENTS_MARKET.map((point) => (
+              <tr key={point.year}>
+                <th scope="row">
+                  {point.year}
+                  {point.isForecast ? ` (${t("forecast")})` : ""}
+                </th>
+                <td>{number.format(point.billionsUsd)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
       <p className={styles.source}>
         <TrendSourceLink id="market" label={t("source")} />
       </p>
@@ -100,17 +102,19 @@ export async function SmbChart() {
           </li>
         ))}
       </ul>
-      <table className="sr-only">
-        <caption>{t("title")}</caption>
-        <tbody>
-          {SMB_AI_USAGE.map((row) => (
-            <tr key={row.id}>
-              <th scope="row">{t(row.id)}</th>
-              <td>{row.percent}%</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <div className="sr-only">
+        <table>
+          <caption>{t("title")}</caption>
+          <tbody>
+            {SMB_AI_USAGE.map((row) => (
+              <tr key={row.id}>
+                <th scope="row">{t(row.id)}</th>
+                <td>{row.percent}%</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
       <p className={styles.source}>
         <TrendSourceLink id="smb" label={t("source")} />
       </p>
@@ -159,25 +163,27 @@ export async function AgentsChart() {
           </li>
         ))}
       </ul>
-      <table className="sr-only">
-        <caption>{t("title")}</caption>
-        <thead>
-          <tr>
-            <th scope="col" />
-            <th scope="col">{previous}</th>
-            <th scope="col">{current}</th>
-          </tr>
-        </thead>
-        <tbody>
-          {AGENTS_SCALING.map((group) => (
-            <tr key={group.id}>
-              <th scope="row">{t(group.id)}</th>
-              <td>{group.previous}%</td>
-              <td>{group.current}%</td>
+      <div className="sr-only">
+        <table>
+          <caption>{t("title")}</caption>
+          <thead>
+            <tr>
+              <th scope="col" />
+              <th scope="col">{previous}</th>
+              <th scope="col">{current}</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {AGENTS_SCALING.map((group) => (
+              <tr key={group.id}>
+                <th scope="row">{t(group.id)}</th>
+                <td>{group.previous}%</td>
+                <td>{group.current}%</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
       <p className={styles.source}>
         <TrendSourceLink id="agents" label={t("source")} />
       </p>

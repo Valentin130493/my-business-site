@@ -2,8 +2,9 @@
 
 import { useEffect, useId, useRef, useState, type ReactNode } from "react";
 
-import { openContact, type ContactOption } from "@/lib/contact";
+import type { ContactOption } from "@/lib/contact";
 
+import { ContactLink } from "./ContactLink";
 import styles from "./ContactMenu.module.scss";
 
 type ContactMenuProps = {
@@ -48,19 +49,10 @@ export function ContactMenu({
 
   if (options.length === 1) {
     return (
-      <button
-        type="button"
-        className={triggerClassName}
-        onClick={() => openContact(options[0])}
-      >
+      <ContactLink contact={options[0]} className={triggerClassName}>
         {label}
-      </button>
+      </ContactLink>
     );
-  }
-
-  function choose(option: ContactOption) {
-    openContact(option);
-    setIsOpen(false);
   }
 
   return (
@@ -82,13 +74,13 @@ export function ContactMenu({
         <ul className={styles.options}>
           {options.map((option) => (
             <li key={option.channel}>
-              <button
-                type="button"
+              <ContactLink
+                contact={option}
                 className={styles.option}
-                onClick={() => choose(option)}
+                onOpen={() => setIsOpen(false)}
               >
                 {option.label}
-              </button>
+              </ContactLink>
             </li>
           ))}
         </ul>

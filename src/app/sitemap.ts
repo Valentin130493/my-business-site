@@ -5,11 +5,13 @@ import { SITE_URL } from "@/constants/site";
 
 const PAGE_PATHS = ["", ABOUT_PATH];
 
-// Каждая запись знает о соседних языках — так Google показывает человеку версию на его языке
 export default function sitemap(): MetadataRoute.Sitemap {
   return PAGE_PATHS.flatMap((path) => {
     const languages = Object.fromEntries(
-      SUPPORTED_LOCALES.map((loc) => [loc, `${SITE_URL}${localePath(loc, path)}`]),
+      SUPPORTED_LOCALES.map((loc) => [
+        loc,
+        `${SITE_URL}${localePath(loc, path)}`,
+      ]),
     );
 
     return SUPPORTED_LOCALES.map((locale) => ({

@@ -1,6 +1,8 @@
 @use "@/styles/variables" as vars;
 
 $bar-thickness: 14px;
+$track-height: 6px;
+$thumb-size: 28px;
 
 .section {
   @include vars.section;
@@ -67,10 +69,63 @@ $bar-thickness: 14px;
   white-space: nowrap;
 }
 
+@mixin range-track {
+  height: $track-height;
+  border-radius: vars.$radius-pill;
+}
+
+@mixin range-thumb {
+  box-sizing: border-box;
+  width: $thumb-size;
+  height: $thumb-size;
+  border: 3px solid var(--color-dark-panel);
+  border-radius: 50%;
+  background: var(--color-mint);
+  box-shadow: 0 0 0 1px var(--color-mint);
+}
+
+// --fill задаёт виджет: доля шкалы слева от ползунка
 .range {
+  -webkit-appearance: none;
+  appearance: none;
   width: 100%;
-  accent-color: var(--color-mint);
+  height: $thumb-size;
+  background: transparent;
   cursor: pointer;
+
+  &::-webkit-slider-runnable-track {
+    @include range-track;
+    background: linear-gradient(
+      to right,
+      var(--color-mint) var(--fill, 0%),
+      var(--color-chart-muted-dark) var(--fill, 0%)
+    );
+  }
+
+  &::-webkit-slider-thumb {
+    @include range-thumb;
+    -webkit-appearance: none;
+    appearance: none;
+    margin-top: calc((#{$track-height} - #{$thumb-size}) / 2);
+  }
+
+  &::-moz-range-track {
+    @include range-track;
+    background: var(--color-chart-muted-dark);
+  }
+
+  &::-moz-range-progress {
+    @include range-track;
+    background: var(--color-mint);
+  }
+
+  &::-moz-range-thumb {
+    @include range-thumb;
+  }
+
+  &:focus-visible {
+    outline-color: var(--color-mint);
+  }
 }
 
 .result {

@@ -38,6 +38,9 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: vars.$navbar-height;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -53,8 +56,6 @@ body {
   }
 }
 
-// элементы до появления сдвинуты вниз анимацией — без clip они удлиняют
-// страницу, и у самого низа скролл дёргается, когда сдвиг пропадает
 main {
   overflow: hidden;
   overflow: clip;
@@ -109,13 +110,18 @@ p {
   border-radius: 6px;
 }
 
+// Не вешать на <table>: таблица не сжимается до 1px и раздувает ширину страницы
 .sr-only {
   position: absolute;
   width: 1px;
   height: 1px;
+  margin: -1px;
+  padding: 0;
   overflow: hidden;
+  clip: rect(0 0 0 0);
   clip-path: inset(50%);
   white-space: nowrap;
+  border: 0;
 }
 
 .skip-link {
@@ -141,7 +147,6 @@ p {
   }
 }
 
-// Прячем только когда JS подтвердил, что сам покажет элемент: без JS контент виден сразу
 @media (prefers-reduced-motion: no-preference) {
   :root[data-reveal-ready] [data-reveal]:not([data-revealed]) {
     opacity: 0;

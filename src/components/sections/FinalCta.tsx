@@ -1,7 +1,7 @@
 import { getTranslations } from "next-intl/server";
 
 import { buttonClassName } from "@/components/ui/Button";
-import { ContactButton } from "@/components/ui/ContactButton";
+import { ContactLink } from "@/components/ui/ContactLink";
 import { Container } from "@/components/ui/Container";
 import { CONTACT_OPTIONS } from "@/constants/contacts";
 import { SECTION_ID_CONTACT, headingIdOf } from "@/constants/sections";
@@ -30,13 +30,13 @@ export async function FinalCta() {
           {CONTACT_OPTIONS.length > 0 ? (
             <div className={styles.buttons}>
               {CONTACT_OPTIONS.map((contact, index) => (
-                <ContactButton
+                <ContactLink
                   key={contact.channel}
                   contact={contact}
                   className={buttonClassName(index === 0 ? "accent" : "outlineLight")}
                 >
                   {t(`final.${contact.channel}`)}
-                </ContactButton>
+                </ContactLink>
               ))}
             </div>
           ) : (

@@ -11,7 +11,9 @@
   animation: rise 700ms var(--ease-out) 150ms both;
 }
 
+// isolation: без неё Safari не обрезает анимированные сообщения по скруглению
 .screen {
+  isolation: isolate;
   overflow: hidden;
   border-radius: 32px;
   background: var(--color-paper);

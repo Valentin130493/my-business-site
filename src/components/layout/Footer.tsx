@@ -1,6 +1,6 @@
 import { getTranslations } from "next-intl/server";
 
-import { ContactButton } from "@/components/ui/ContactButton";
+import { ContactLink } from "@/components/ui/ContactLink";
 import { Container } from "@/components/ui/Container";
 import { CONTACT_OPTIONS } from "@/constants/contacts";
 
@@ -16,13 +16,13 @@ export async function Footer() {
         <p>{t("line")}</p>
         <address className={styles.contacts}>
           {CONTACT_OPTIONS.map((contact) => (
-            <ContactButton
+            <ContactLink
               key={contact.channel}
               contact={contact}
               className={styles.link}
             >
               {contact.label}
-            </ContactButton>
+            </ContactLink>
           ))}
         </address>
       </Container>

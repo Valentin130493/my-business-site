@@ -10,7 +10,7 @@ export const SUPPORTED_LOCALES = [
   LOCALE_RU,
 ] as const;
 
-export const DEFAULT_LOCALE = LOCALE_RU;
+export const DEFAULT_LOCALE = LOCALE_EN;
 
 export const LOCALE_PREFIXES = {
   [LOCALE_ME]: "/me",

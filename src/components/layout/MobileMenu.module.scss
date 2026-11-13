@@ -122,7 +122,9 @@ $menu-exit: 150ms;
 }
 
 .contact {
+  display: block;
   padding: vars.$space-3;
+  text-align: center;
   border-radius: vars.$radius-pill;
   background: var(--color-sea);
   color: var(--color-on-dark);

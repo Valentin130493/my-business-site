@@ -15,20 +15,22 @@
   border-top: 1px solid var(--color-line);
 }
 
+$icon-gutter: 2.5rem;
+
 .item {
   border-bottom: 1px solid var(--color-line);
 
   &[open] .question::after {
-    transform: rotate(45deg);
+    transform: translateY(-50%) rotate(45deg);
   }
 }
 
+// Safari до 17 не делает <summary> flex-контейнером, поэтому иконка позиционируется абсолютно
 .question {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: vars.$space-6;
+  position: relative;
+  display: block;
   padding-block: vars.$space-5;
+  padding-right: $icon-gutter;
   font-weight: 600;
   font-size: 1.1875rem;
   cursor: pointer;
@@ -38,14 +40,21 @@
     display: none;
   }
 
+  &::marker {
+    content: "";
+  }
+
   &::after {
     content: "+";
-    flex: 0 0 auto;
+    position: absolute;
+    top: 50%;
+    right: 0;
     font-family: vars.$font-family-display;
     font-weight: 500;
     font-size: 1.75rem;
     line-height: 1;
     color: var(--color-sea);
+    transform: translateY(-50%);
     transition: transform 200ms var(--ease-out);
   }
 }

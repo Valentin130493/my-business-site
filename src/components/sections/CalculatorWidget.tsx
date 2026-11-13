@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type ChangeEvent } from "react";
+import { useState, type ChangeEvent, type CSSProperties } from "react";
 
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { formatPrice } from "@/constants/pricing";
@@ -41,6 +41,11 @@ type CalculatorWidgetProps = {
   ctaHref: string;
 };
 
+function fillPercent(key: FieldKey, value: number): number {
+  const { min, max } = FIELD_RANGES[key];
+  return ((value - min) / (max - min)) * PERCENT;
+}
+
 function estimate({ perDay, offShare, conversion, check }: FieldValues) {
   const monthlyMessages = perDay * DAYS_IN_MONTH;
   const unansweredMessages = (monthlyMessages * offShare) / PERCENT;
@@ -78,6 +83,7 @@ export function CalculatorWidget({ labels, locale, ctaHref }: CalculatorWidgetPr
             <input
               type="range"
               className={styles.range}
+              style={{ "--fill": `${fillPercent(key, values[key])}%` } as CSSProperties}
               min={FIELD_RANGES[key].min}
               max={FIELD_RANGES[key].max}
               step={FIELD_RANGES[key].step}

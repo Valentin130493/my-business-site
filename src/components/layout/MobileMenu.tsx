@@ -2,7 +2,7 @@
 
 import { useEffect, useId, useRef, useState } from "react";
 
-import { ContactButton } from "@/components/ui/ContactButton";
+import { ContactLink } from "@/components/ui/ContactLink";
 import type { ContactOption } from "@/lib/contact";
 
 import styles from "./MobileMenu.module.scss";
@@ -89,9 +89,14 @@ export function MobileMenu({
             <p className={styles.contactsLabel}>{contactsLabel}</p>
             <div className={styles.contactButtons}>
               {contacts.map((contact) => (
-                <ContactButton key={contact.channel} contact={contact} className={styles.contact}>
+                <ContactLink
+                  key={contact.channel}
+                  contact={contact}
+                  className={styles.contact}
+                  onOpen={close}
+                >
                   {contact.label}
-                </ContactButton>
+                </ContactLink>
               ))}
             </div>
           </div>
