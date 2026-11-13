@@ -1,4 +1,8 @@
-// Единственная точка загрузки three.js: отдельный чанк, который тянется только для 3D-режима
+// Точки загрузки three.js: отдельные чанки, которые тянутся только в 3D-режиме
 export function loadPneumoScene() {
   return import("./scene");
+}
+
+export function loadGaugeScene() {
+  return import("./gauge");
 }

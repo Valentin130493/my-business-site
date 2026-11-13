@@ -140,6 +140,10 @@ $thumb-size: 28px;
   color: var(--color-ink);
 }
 
+.gauge {
+  display: none;
+}
+
 .resultLabel {
   font-size: 0.9375rem;
   color: var(--color-muted);

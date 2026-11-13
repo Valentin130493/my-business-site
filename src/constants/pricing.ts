@@ -18,11 +18,20 @@ export const PLAN_PRICES: Record<PlanId, PlanPrice> = {
 export const FEATURED_PLAN_ID: PlanId = "standard";
 
 export function formatPrice(amount: number, locale: string): string {
+  return priceFormat(locale).format(amount);
+}
+
+export function currencySymbol(locale: string): string {
+  const parts = priceFormat(locale).formatToParts(0);
+  return parts.find((part) => part.type === "currency")?.value ?? PRICE_CURRENCY;
+}
+
+function priceFormat(locale: string): Intl.NumberFormat {
   return new Intl.NumberFormat(locale, {
     style: "currency",
     currency: PRICE_CURRENCY,
     // без narrowSymbol uk показывает «1 200 EUR» вместо «1 200 €»
     currencyDisplay: "narrowSymbol",
     maximumFractionDigits: 0,
-  }).format(amount);
+  });
 }

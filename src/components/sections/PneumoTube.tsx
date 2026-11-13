@@ -2,10 +2,12 @@
 
 import { useEffect, useRef } from "react";
 
-import { REDUCED_MOTION_QUERY } from "@/constants/motion";
+import canvasStyles from "@/components/ui/SceneCanvas.module.scss";
 import { VIEW_MODE_3D } from "@/constants/viewMode";
 import { classNames } from "@/lib/classNames";
+import { prefersReducedMotion } from "@/lib/motion";
 import { loadPneumoScene } from "@/lib/pneumo/load";
+import { mountLazyScene } from "@/lib/pneumo/mountLazyScene";
 import type { PneumoScene } from "@/lib/pneumo/scene";
 import { useViewMode } from "@/lib/viewMode";
 
@@ -21,32 +23,11 @@ function scrollProgress(section: HTMLElement): number {
   return Math.min(Math.max(-top / height, 0), 1);
 }
 
-function mountScene(canvas: HTMLCanvasElement, section: HTMLElement, tagTime: string): () => void {
-  let scene: PneumoScene | null = null;
-  let isCancelled = false;
-  const syncProgress = () => scene?.setProgress(scrollProgress(section));
-  const resizeObserver = new ResizeObserver(([entry]) => {
-    scene?.resize(entry.contentRect.width, entry.contentRect.height);
-  });
-
-  loadPneumoScene().then(({ createPneumoScene }) => {
-    if (isCancelled) return;
-    const isStatic = window.matchMedia(REDUCED_MOTION_QUERY).matches;
-    scene = createPneumoScene(canvas, { tagTime, isStatic });
-    if (!scene) return;
-    resizeObserver.observe(canvas);
-    window.addEventListener("scroll", syncProgress, { passive: true });
-    syncProgress();
-    canvas.dataset.ready = "";
-  });
-
-  return () => {
-    isCancelled = true;
-    resizeObserver.disconnect();
-    window.removeEventListener("scroll", syncProgress);
-    scene?.dispose();
-    delete canvas.dataset.ready;
-  };
+function followScroll(scene: PneumoScene, section: HTMLElement): () => void {
+  const syncProgress = () => scene.setProgress(scrollProgress(section));
+  window.addEventListener("scroll", syncProgress, { passive: true });
+  syncProgress();
+  return () => window.removeEventListener("scroll", syncProgress);
 }
 
 // Сцена создаётся только в 3D-режиме: в обычном three.js даже не загружается
@@ -58,12 +39,20 @@ export function PneumoTube({ tagTime, className }: PneumoTubeProps) {
     const canvas = canvasRef.current;
     const section = canvas?.closest("section");
     if (!isActive || !canvas || !section) return;
-    return mountScene(canvas, section, tagTime);
+
+    return mountLazyScene(
+      canvas,
+      async () => {
+        const { createPneumoScene } = await loadPneumoScene();
+        return createPneumoScene(canvas, { tagTime, isStatic: prefersReducedMotion() });
+      },
+      (scene) => followScroll(scene, section),
+    );
   }, [isActive, tagTime]);
 
   return (
     <div className={classNames(styles.slot, className)} aria-hidden="true">
-      <canvas ref={canvasRef} className={styles.canvas} />
+      <canvas ref={canvasRef} className={canvasStyles.canvas} />
     </div>
   );
 }

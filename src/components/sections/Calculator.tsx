@@ -6,10 +6,12 @@ import {
   SECTION_ID_CONTACT,
   headingIdOf,
 } from "@/constants/sections";
+import { classNames } from "@/lib/classNames";
 import { revealProps } from "@/lib/reveal";
 
 import { CalculatorWidget, type CalculatorLabels } from "./CalculatorWidget";
 import styles from "./Calculator.module.scss";
+import styles3d from "./Calculator.3d.module.scss";
 
 export async function Calculator() {
   const t = await getTranslations("calc");
@@ -35,7 +37,7 @@ export async function Calculator() {
     <section
       id={SECTION_ID_CALC}
       aria-labelledby={headingId}
-      className={styles.section}
+      className={classNames(styles.section, styles3d.section)}
     >
       <Container>
         <div className={styles.intro} {...revealProps()}>

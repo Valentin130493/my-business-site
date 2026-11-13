@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-import { REDUCED_MOTION_QUERY } from "@/constants/motion";
+import { prefersReducedMotion } from "@/lib/motion";
 
 import styles from "./ChatDemo.module.scss";
 
@@ -40,7 +40,7 @@ export function ChatDemo({
   const [isTyping, setIsTyping] = useState(false);
 
   useEffect(() => {
-    const reduce = window.matchMedia(REDUCED_MOTION_QUERY).matches;
+    const reduce = prefersReducedMotion();
     // При «уменьшить движение» всё видно сразу через CSS
     if (reduce) return;
 

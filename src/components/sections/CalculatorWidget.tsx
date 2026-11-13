@@ -3,9 +3,12 @@
 import { useState, type ChangeEvent, type CSSProperties } from "react";
 
 import { ButtonLink } from "@/components/ui/ButtonLink";
-import { formatPrice } from "@/constants/pricing";
+import { currencySymbol, formatPrice } from "@/constants/pricing";
+import { classNames } from "@/lib/classNames";
 
 import styles from "./Calculator.module.scss";
+import styles3d from "./Calculator.3d.module.scss";
+import { PressureGauge } from "./PressureGauge";
 
 const DAYS_IN_MONTH = 30;
 const PERCENT = 100;
@@ -94,7 +97,13 @@ export function CalculatorWidget({ labels, locale, ctaHref }: CalculatorWidgetPr
         ))}
       </div>
 
-      <div className={styles.result} aria-live="polite">
+      <div className={classNames(styles.result, styles3d.result)} aria-live="polite">
+        <PressureGauge
+          value={result.lostRevenue}
+          locale={locale}
+          unit={`${currencySymbol(locale)} · ${labels.perMonth}`}
+          className={classNames(styles.gauge, styles3d.gauge)}
+        />
         <p className={styles.resultLabel}>{labels.resultLabel}</p>
         <p className={styles.resultValue}>
           {formatPrice(result.lostRevenue, locale)} <span>{labels.perMonth}</span>

@@ -1,4 +1,4 @@
-import { REDUCED_MOTION_QUERY } from "@/constants/motion";
+import { prefersReducedMotion } from "@/lib/motion";
 
 const REVEAL_DURATION = 700;
 const REVEAL_EASING = "cubic-bezier(0.16, 1, 0.3, 1)";
@@ -31,7 +31,7 @@ function animateCircle({ x, y }: RevealOrigin): void {
 export function revealChange(origin: RevealOrigin, update: () => void): void {
   const canAnimate =
     typeof document.startViewTransition === "function" &&
-    !window.matchMedia(REDUCED_MOTION_QUERY).matches;
+    !prefersReducedMotion();
 
   if (!canAnimate) {
     update();
