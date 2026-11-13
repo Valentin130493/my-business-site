@@ -1,0 +1,31 @@
+// Тёмная тема — «ночная смена». Включается в 3D-режиме и у тех, у кого тёмная тема в системе.
+// Светлые цветовые токены подменяются на тёмные, стили компонентов при этом не меняются.
+// Если тёмный фон где-то задан «светлым» токеном, правка лежит в *.dark.module.scss компонента
+@mixin night-tokens {
+  --color-stone: var(--color-basalt);
+  --color-paper: var(--color-dark-panel);
+  --color-ink: #e8efed;
+  --color-muted: var(--color-on-dark-muted);
+  --color-line: #2c3a3e;
+  --color-foam: #1d3a33;
+  --color-sea: var(--color-mint);
+  --color-sea-deep: #b9eedb;
+  --color-on-dark: var(--color-basalt);
+  --color-chart-grid: #2c3a3e;
+  --color-chart-muted: #6e7b7f;
+  --color-chart-accent: var(--color-mint);
+  --color-brand-tile: var(--color-dark-panel);
+  --shadow-soft: 0 24px 48px -32px rgb(0 0 0 / 60%);
+
+  color-scheme: dark;
+}
+
+:root[data-view="3d"] {
+  @include night-tokens;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    @include night-tokens;
+  }
+}

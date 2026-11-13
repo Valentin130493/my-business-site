@@ -1,0 +1,16 @@
+@use "@/styles/variables" as vars;
+
+// Плашка и карточка прогноза в светлой теме залиты --color-ink, который ночью светлый
+.eyebrow {
+  @include vars.dark-theme {
+    background: var(--color-foam);
+  }
+}
+
+.forecast {
+  @include vars.dark-theme {
+    --color-on-dark: var(--color-ink);
+
+    background: var(--color-foam);
+  }
+}

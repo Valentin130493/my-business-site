@@ -11,7 +11,7 @@ import { revealProps } from "@/lib/reveal";
 
 import { CalculatorWidget, type CalculatorLabels } from "./CalculatorWidget";
 import styles from "./Calculator.module.scss";
-import styles3d from "./Calculator.3d.module.scss";
+import stylesDark from "./Calculator.dark.module.scss";
 
 export async function Calculator() {
   const t = await getTranslations("calc");
@@ -37,7 +37,7 @@ export async function Calculator() {
     <section
       id={SECTION_ID_CALC}
       aria-labelledby={headingId}
-      className={classNames(styles.section, styles3d.section)}
+      className={classNames(styles.section, stylesDark.section)}
     >
       <Container>
         <div className={styles.intro} {...revealProps()}>

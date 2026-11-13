@@ -47,3 +47,17 @@ $navbar-height: 72px;
   line-height: 1.12;
   letter-spacing: -0.02em;
 }
+
+// Тёмная тема: в 3D-режиме и у тех, у кого тёмная тема в системе. Цвета — в styles/theme-dark.scss,
+// миксин нужен для мест, где тёмный фон задан «светлым» токеном. :root поднимает специфичность над базовым правилом
+@mixin dark-theme {
+  :global(:root[data-view="3d"]) & {
+    @content;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :global(:root) & {
+      @content;
+    }
+  }
+}

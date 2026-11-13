@@ -95,6 +95,7 @@
     padding: vars.$space-1 vars.$space-3;
     border-radius: vars.$radius-pill;
     background: rgba(255, 255, 255, 0.75);
+    background: color-mix(in srgb, var(--color-paper) 75%, transparent);
     font-size: 0.875rem;
     font-weight: 500;
   }

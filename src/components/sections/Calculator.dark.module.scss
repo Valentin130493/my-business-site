@@ -1,0 +1,18 @@
+@use "@/styles/variables" as vars;
+
+// Секция тёмная и в светлой теме, поэтому её «тёмные» токены возвращаются вручную:
+// иначе ночная подмена из styles/theme-dark.scss сделала бы фон светлым, а текст тёмным
+.section {
+  @include vars.dark-theme {
+    --color-on-dark: var(--color-ink);
+
+    background: var(--color-basalt);
+  }
+}
+
+// Кнопка в карточке результата — мятная с тёмным текстом
+.result {
+  @include vars.dark-theme {
+    --color-on-dark: var(--color-basalt);
+  }
+}

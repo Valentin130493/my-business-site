@@ -4,6 +4,7 @@ import { BrandMark } from "@/components/ui/BrandMark";
 import { ContactMenu } from "@/components/ui/ContactMenu";
 import { Container } from "@/components/ui/Container";
 import { CONTACT_OPTIONS } from "@/constants/contacts";
+import { classNames } from "@/lib/classNames";
 import { ABOUT_PATH, localePath, type SiteLocale } from "@/constants/locales";
 import {
   SECTION_ID_CALC,
@@ -17,6 +18,7 @@ import {
 import { LocaleSwitcher } from "./LocaleSwitcher";
 import { MobileMenu, type NavLink } from "./MobileMenu";
 import styles from "./Navbar.module.scss";
+import stylesDark from "./Navbar.dark.module.scss";
 
 type NavbarProps = {
   isHome?: boolean;
@@ -66,7 +68,7 @@ export async function Navbar({ isHome = true }: NavbarProps) {
           label={t("nav.write")}
           caption={t("nav.chooseChannel")}
           options={CONTACT_OPTIONS}
-          triggerClassName={styles.write}
+          triggerClassName={classNames(styles.write, stylesDark.write)}
           align="end"
         />
         <MobileMenu

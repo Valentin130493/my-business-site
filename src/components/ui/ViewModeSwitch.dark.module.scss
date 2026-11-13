@@ -1,0 +1,8 @@
+@use "@/styles/variables" as vars;
+
+.option[aria-pressed="true"] {
+  @include vars.dark-theme {
+    background: var(--color-mint);
+    color: var(--color-on-mint);
+  }
+}

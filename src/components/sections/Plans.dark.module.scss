@@ -1,0 +1,12 @@
+@use "@/styles/variables" as vars;
+
+// Рекомендуемый тариф ночью — тёмно-мятная карточка с мятной рамкой:
+// мятная заливка спрятала бы мятные галочки
+.featured {
+  @include vars.dark-theme {
+    --color-on-dark: var(--color-ink);
+
+    border-color: var(--color-mint);
+    background: var(--color-foam);
+  }
+}

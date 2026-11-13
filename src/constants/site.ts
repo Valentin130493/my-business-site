@@ -1,7 +1,16 @@
 import { urlFromEnv } from "./env";
 
-export const SITE_URL =
-  urlFromEnv("SITE_URL") || "https://valentin-bots.vercel.app";
+const LOCAL_SITE_URL = "http://localhost:3000";
+
+// Vercel сам передаёт продакшен-домен проекта (без протокола) — и в продакшене, и в превью
+function vercelProductionUrl(): string {
+  const domain = process.env.VERCEL_PROJECT_PRODUCTION_URL?.trim();
+  return domain ? `https://${domain}` : "";
+}
+
+// Свой домен задаётся через SITE_URL; без него — продакшен-домен проекта на Vercel, локально — localhost.
+// Адрес попадает в canonical, sitemap, robots и llms.txt, поэтому чужой домен-заглушка здесь недопустим
+export const SITE_URL = urlFromEnv("SITE_URL") || vercelProductionUrl() || LOCAL_SITE_URL;
 
 export const GITHUB_URL = "https://github.com/Valentin130493";
 

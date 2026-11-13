@@ -9,7 +9,7 @@ import { loadPneumoScene } from "@/lib/pneumo/load";
 import { applyViewMode, useViewMode } from "@/lib/viewMode";
 
 import styles from "./ViewModeSwitch.module.scss";
-import styles3d from "./ViewModeSwitch.3d.module.scss";
+import stylesDark from "./ViewModeSwitch.dark.module.scss";
 
 type ViewModeSwitchProps = {
   label: string;
@@ -37,12 +37,12 @@ export function ViewModeSwitch({ label, classicLabel, sceneLabel, className }: V
   }
 
   return (
-    <div role="group" aria-label={label} className={classNames(styles.switch, styles3d.switch, className)}>
+    <div role="group" aria-label={label} className={classNames(styles.switch, className)}>
       {options.map((option) => (
         <button
           key={option.mode}
           type="button"
-          className={classNames(styles.option, styles3d.option)}
+          className={classNames(styles.option, stylesDark.option)}
           aria-pressed={option.mode === mode}
           onClick={(event) => choose(event, option.mode)}
           onPointerEnter={option.mode === VIEW_MODE_3D ? preloadScene : undefined}

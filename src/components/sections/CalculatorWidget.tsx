@@ -8,6 +8,7 @@ import { classNames } from "@/lib/classNames";
 
 import styles from "./Calculator.module.scss";
 import styles3d from "./Calculator.3d.module.scss";
+import stylesDark from "./Calculator.dark.module.scss";
 import { PressureGauge } from "./PressureGauge";
 
 const DAYS_IN_MONTH = 30;
@@ -97,7 +98,7 @@ export function CalculatorWidget({ labels, locale, ctaHref }: CalculatorWidgetPr
         ))}
       </div>
 
-      <div className={classNames(styles.result, styles3d.result)} aria-live="polite">
+      <div className={classNames(styles.result, stylesDark.result)} aria-live="polite">
         <PressureGauge
           value={result.lostRevenue}
           locale={locale}

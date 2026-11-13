@@ -2,12 +2,14 @@ import { getLocale, getTranslations } from "next-intl/server";
 
 import { Container } from "@/components/ui/Container";
 import { SECTION_ID_TREND, headingIdOf } from "@/constants/sections";
+import { classNames } from "@/lib/classNames";
 import { revealProps } from "@/lib/reveal";
 import type { TrendStep, TrendTile } from "@/types/content";
 
 import { AgentsChart, MarketChart, SmbChart } from "./TrendCharts";
 import { TrendSourceLink as SourceLink } from "./TrendSourceLink";
 import styles from "./Trend.module.scss";
+import stylesDark from "./Trend.dark.module.scss";
 
 export async function Trend() {
   const t = await getTranslations("trend");
@@ -23,7 +25,7 @@ export async function Trend() {
     >
       <Container>
         <div className={styles.intro} {...revealProps()}>
-          <p className={styles.eyebrow}>{t("eyebrow")}</p>
+          <p className={classNames(styles.eyebrow, stylesDark.eyebrow)}>{t("eyebrow")}</p>
           <h2 id={headingId} className={styles.heading}>
             {t("heading")}
           </h2>
@@ -75,7 +77,11 @@ function Timeline({
       {steps.map((step, index) => (
         <li
           key={step.id}
-          className={`${styles.step} ${step.isForecast ? styles.forecast : ""}`}
+          className={classNames(
+            styles.step,
+            step.isForecast && styles.forecast,
+            step.isForecast && stylesDark.forecast,
+          )}
           {...revealProps(index)}
         >
           <p className={styles.period}>

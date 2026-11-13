@@ -6,7 +6,7 @@
   justify-self: center;
   padding: 14px;
   border-radius: 44px;
-  background: var(--color-ink);
+  background: var(--color-basalt);
   box-shadow:
     0 0 0 1px rgb(255 255 255 / 10%),
     var(--shadow-phone);
@@ -37,7 +37,7 @@
   height: 40px;
   border-radius: 50%;
   background: var(--color-mint);
-  color: var(--color-ink);
+  color: var(--color-on-mint);
   font-family: vars.$font-family-display;
   font-weight: 600;
   font-size: 0.95rem;

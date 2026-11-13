@@ -1,23 +1,7 @@
 @use "@/styles/variables" as vars;
 
+// Манометр есть только в 3D-режиме
 :global(:root[data-view="3d"]) {
-  .section {
-    background: var(--color-basalt);
-  }
-
-  // Карточка результата темнеет подменой цветовых токенов внутри неё:
-  // разметка и стили обычного режима остаются как есть
-  .result {
-    --color-paper: var(--color-dark-panel);
-    --color-ink: var(--color-stone);
-    --color-muted: var(--color-on-dark-muted);
-    --color-chart-muted: var(--color-on-dark-muted);
-    --color-chart-accent: var(--color-mint);
-    --color-sea: var(--color-mint);
-    --color-sea-deep: var(--color-foam);
-    --color-on-dark: var(--color-basalt);
-  }
-
   .gauge {
     display: block;
     height: 220px;

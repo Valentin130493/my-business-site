@@ -1,0 +1,10 @@
+@use "@/styles/variables" as vars;
+
+// Кнопка в шапке ночью приглушена: яркая мятная заливка остаётся у главного призыва на первом экране
+.write {
+  @include vars.dark-theme {
+    background: var(--color-foam);
+    color: var(--color-mint);
+    box-shadow: inset 0 0 0 1px rgb(142 220 192 / 45%);
+  }
+}

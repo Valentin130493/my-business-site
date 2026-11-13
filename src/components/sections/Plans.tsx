@@ -7,10 +7,12 @@ import {
   formatPrice,
 } from "@/constants/pricing";
 import { SECTION_ID_PLANS, headingIdOf } from "@/constants/sections";
+import { classNames } from "@/lib/classNames";
 import { revealProps } from "@/lib/reveal";
 import type { PlanText } from "@/types/content";
 
 import styles from "./Plans.module.scss";
+import stylesDark from "./Plans.dark.module.scss";
 
 export async function Plans() {
   const t = await getTranslations("plans");
@@ -48,7 +50,7 @@ async function PlanCard({ plan, index }: { plan: PlanText; index: number }) {
   return (
     <article
       aria-labelledby={headingId}
-      className={`${styles.plan} ${isFeatured ? styles.featured : ""}`}
+      className={classNames(styles.plan, isFeatured && styles.featured, isFeatured && stylesDark.featured)}
       {...revealProps(index)}
     >
       <header className={styles.header}>

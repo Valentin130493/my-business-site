@@ -19,6 +19,7 @@ import { VIEW_MODE_BOOT_SCRIPT } from "@/lib/viewModeBootScript";
 import { buildSiteJsonLd } from "@/seo/siteJsonLd";
 import type { PlanText, SkillGroup } from "@/types/content";
 import "@/styles/globals.scss";
+import "@/styles/theme-dark.scss";
 
 // latin-ext — для черногорских букв: č, ć, š, ž, đ
 const golos = Golos_Text({

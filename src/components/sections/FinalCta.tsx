@@ -5,9 +5,11 @@ import { ContactLink } from "@/components/ui/ContactLink";
 import { Container } from "@/components/ui/Container";
 import { CONTACT_OPTIONS } from "@/constants/contacts";
 import { SECTION_ID_CONTACT, headingIdOf } from "@/constants/sections";
+import { classNames } from "@/lib/classNames";
 import { revealProps } from "@/lib/reveal";
 
 import styles from "./FinalCta.module.scss";
+import stylesDark from "./FinalCta.dark.module.scss";
 
 export async function FinalCta() {
   const t = await getTranslations();
@@ -20,7 +22,7 @@ export async function FinalCta() {
       className={styles.section}
     >
       <Container>
-        <div className={styles.box} {...revealProps()}>
+        <div className={classNames(styles.box, stylesDark.box)} {...revealProps()}>
           <div className={styles.content}>
             <h2 id={headingId} className={styles.heading}>
               {t("final.heading")}

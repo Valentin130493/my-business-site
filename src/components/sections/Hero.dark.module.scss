@@ -1,0 +1,8 @@
+@use "@/styles/variables" as vars;
+
+.badge,
+.calcLink {
+  @include vars.dark-theme {
+    color: var(--color-mint);
+  }
+}

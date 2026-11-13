@@ -6,6 +6,7 @@
   z-index: 20;
   border-bottom: 1px solid var(--color-line);
   background: rgba(244, 246, 245, 0.88);
+  background: color-mix(in srgb, var(--color-stone) 88%, transparent);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }

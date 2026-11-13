@@ -17,6 +17,7 @@ import { classNames } from "@/lib/classNames";
 import { ChatDemo, type ChatMessage } from "./ChatDemo";
 import styles from "./Hero.module.scss";
 import styles3d from "./Hero.3d.module.scss";
+import stylesDark from "./Hero.dark.module.scss";
 import { PneumoTube } from "./PneumoTube";
 
 export async function Hero() {
@@ -33,7 +34,7 @@ export async function Hero() {
       <Container className={classNames(styles.grid, styles3d.grid)}>
         <div>
           <div className={styles.topline}>
-            <p className={classNames(styles.badge, styles3d.badge)}>{t("hero.badge")}</p>
+            <p className={classNames(styles.badge, stylesDark.badge)}>{t("hero.badge")}</p>
             <ViewModeSwitch
               label={t("hero.view.label")}
               classicLabel={t("hero.view.classic")}
@@ -44,26 +45,20 @@ export async function Hero() {
           <h1 id={headingId} className={styles.title}>
             {t("hero.title")}
           </h1>
-          <p className={classNames(styles.lead, styles3d.lead)}>{t("hero.lead")}</p>
-          <p className={classNames(styles.founder, styles3d.founder)}>
-            {t("hero.founderLine")}
-          </p>
+          <p className={styles.lead}>{t("hero.lead")}</p>
+          <p className={styles.founder}>{t("hero.founderLine")}</p>
           <div className={styles.buttons}>
             <ContactMenu
               label={t("hero.ctaPrimary")}
               caption={t("nav.chooseChannel")}
               options={CONTACT_OPTIONS}
-              triggerClassName={buttonClassName("primary", styles3d.primaryCta)}
+              triggerClassName={buttonClassName("primary")}
             />
-            <ButtonLink
-              href={`#${SECTION_ID_PLANS}`}
-              variant="outline"
-              className={styles3d.secondaryCta}
-            >
+            <ButtonLink href={`#${SECTION_ID_PLANS}`} variant="outline">
               {t("hero.ctaSecondary")}
             </ButtonLink>
           </div>
-          <a href={`#${SECTION_ID_CALC}`} className={classNames(styles.calcLink, styles3d.calcLink)}>
+          <a href={`#${SECTION_ID_CALC}`} className={classNames(styles.calcLink, stylesDark.calcLink)}>
             {t("hero.calcLink")}&nbsp;→
           </a>
         </div>

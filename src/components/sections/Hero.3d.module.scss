@@ -1,14 +1,10 @@
 @use "@/styles/variables" as vars;
 
+// Только раскладка 3D-сцены; цвета ночной темы — в styles/theme-dark.scss и Hero.dark.module.scss
 :global(:root[data-view="3d"]) {
+  // isolation: подсветка вокруг трубы (z-index: -1) остаётся над фоном секции
   .section {
     isolation: isolate;
-    background-color: var(--color-basalt);
-    color: var(--color-on-dark);
-
-    :focus-visible {
-      outline-color: var(--color-mint);
-    }
   }
 
   .grid {
@@ -17,60 +13,29 @@
     }
   }
 
-  .badge {
-    background: var(--color-dark-panel);
-    color: var(--color-mint);
-  }
-
-  .lead {
-    color: var(--color-on-dark-muted);
-  }
-
-  .founder {
-    border-color: var(--color-sea-deep);
-    background: var(--color-dark-panel);
-    color: var(--color-on-dark-muted);
-  }
-
-  .primaryCta {
-    background-color: var(--color-mint);
-    color: var(--color-ink);
-
-    @media (hover: hover) {
-      &:hover {
-        background-color: var(--color-foam);
-      }
-    }
-  }
-
-  .secondaryCta {
-    border-color: var(--color-on-dark);
-    color: var(--color-on-dark);
-
-    @media (hover: hover) {
-      &:hover {
-        background-color: var(--color-dark-panel);
-      }
-    }
-  }
-
-  .calcLink {
-    color: var(--color-mint);
-  }
-
-  // Телефон: полоса во всю ширину экрана между кнопками и чатом.
+  // Телефон: полоса во всю ширину прилипает под шапкой, пока прокручивается первый экран,
+  // текст и чат уходят под неё, а капсула едет по скроллу.
   // Десктоп: третья колонка от верхнего до нижнего края секции
   .tube {
+    position: sticky;
+    top: vars.$navbar-height;
+    z-index: 1;
+    order: -1;
     display: block;
     width: 100vw;
     height: 140px;
+    margin-top: calc(-1 * var(--hero-padding-top));
     margin-inline: calc(50% - 50vw);
+    background: linear-gradient(to bottom, var(--color-basalt) 80%, transparent);
 
     @media (min-width: vars.$breakpoint-tablet) {
       height: 160px;
     }
 
     @media (min-width: vars.$breakpoint-desktop) {
+      position: relative;
+      top: auto;
+      z-index: auto;
       grid-row: 1;
       grid-column: 3;
       align-self: stretch;
@@ -78,6 +43,7 @@
       height: auto;
       margin-inline: 0;
       margin-block: calc(-1 * var(--hero-padding-top)) calc(-1 * var(--hero-padding-bottom));
+      background: none;
     }
   }
 }
