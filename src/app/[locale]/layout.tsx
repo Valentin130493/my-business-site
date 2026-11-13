@@ -15,6 +15,7 @@ import {
 } from "@/constants/locales";
 import { MAIN_CONTENT_ID } from "@/constants/sections";
 import { SITE_URL } from "@/constants/site";
+import { VIEW_MODE_BOOT_SCRIPT } from "@/lib/viewModeBootScript";
 import { buildSiteJsonLd } from "@/seo/siteJsonLd";
 import type { PlanText, SkillGroup } from "@/types/content";
 import "@/styles/globals.scss";
@@ -105,8 +106,13 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
   });
 
   return (
-    <html lang={locale} className={`${golos.variable} ${onest.variable}`}>
+    <html
+      lang={locale}
+      className={`${golos.variable} ${onest.variable}`}
+      suppressHydrationWarning
+    >
       <body>
+        <script dangerouslySetInnerHTML={{ __html: VIEW_MODE_BOOT_SCRIPT }} />
         <a href={`#${MAIN_CONTENT_ID}`} className="skip-link">
           {t("nav.skip")}
         </a>

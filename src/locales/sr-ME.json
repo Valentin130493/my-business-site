@@ -30,7 +30,8 @@
     "founderLine": "Svaki projekat vodim lično: 5+ godina u razvoju, svoja platforma za AI chatbotove i servis za praćenje sajtova Dumza.",
     "ctaPrimary": "Razgovarajmo o botu",
     "ctaSecondary": "Pogledajte cijene",
-    "calcLink": "Izračunajte koliko klijenata gubite"
+    "calcLink": "Izračunajte koliko klijenata gubite",
+    "view": { "label": "Prikaz sajta", "classic": "Klasični", "scene": "3D" }
   },
   "stats": {
     "label": "Ukratko",

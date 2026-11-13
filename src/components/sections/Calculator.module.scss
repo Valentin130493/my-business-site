@@ -85,11 +85,13 @@ $thumb-size: 28px;
 }
 
 // --fill задаёт виджет: доля шкалы слева от ползунка
+// margin-top: auto — ползунки в ряду на одной линии, даже если подпись соседа в две строки
 .range {
   -webkit-appearance: none;
   appearance: none;
   width: 100%;
   height: $thumb-size;
+  margin-top: auto;
   background: transparent;
   cursor: pointer;
 

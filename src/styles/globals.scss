@@ -18,6 +18,7 @@
   --color-chart-muted: #c9d0ce;
   --color-chart-muted-dark: #3a4549;
   --color-chart-grid: #e6eae9;
+  --color-basalt: #0f1213;
 
   --shadow-soft: 0 24px 48px -32px rgba(21, 25, 26, 0.35);
   --shadow-phone: 0 30px 60px -30px rgba(21, 25, 26, 0.5);
@@ -138,6 +139,13 @@ p {
   &:focus {
     transform: none;
   }
+}
+
+// Смена «Обычный / 3D»: стандартное затухание выключено, вид раскрывается кругом (lib/circleReveal)
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
 }
 
 @keyframes rise {

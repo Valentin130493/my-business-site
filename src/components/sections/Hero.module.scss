@@ -1,11 +1,16 @@
 @use "@/styles/variables" as vars;
 
+// Отступы — переменными: 3D-труба тянется на всю высоту секции, вычитая их
 .section {
-  padding-block: vars.$space-10 vars.$space-12;
+  --hero-padding-top: #{vars.$space-10};
+  --hero-padding-bottom: #{vars.$space-12};
+
+  padding-block: var(--hero-padding-top) var(--hero-padding-bottom);
   scroll-margin-top: vars.$navbar-height;
 
   @media (min-width: vars.$breakpoint-desktop) {
-    padding-block: vars.$space-14 vars.$space-16;
+    --hero-padding-top: #{vars.$space-14};
+    --hero-padding-bottom: #{vars.$space-16};
   }
 }
 
@@ -25,10 +30,21 @@
   animation-delay: calc(#{$order} * var(--stagger-step));
 }
 
+.topline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: vars.$space-3;
+  margin-bottom: vars.$space-5;
+}
+
+.viewSwitch {
+  @include entrance(0);
+}
+
 .badge {
   @include entrance(0);
   display: inline-block;
-  margin-bottom: vars.$space-5;
   padding: vars.$space-1 vars.$space-3;
   border-radius: vars.$radius-pill;
   background: var(--color-foam);
@@ -75,4 +91,8 @@
   font-weight: 600;
   text-decoration: underline;
   text-underline-offset: 4px;
+}
+
+.tube {
+  display: none;
 }

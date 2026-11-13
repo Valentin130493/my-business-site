@@ -30,7 +30,8 @@
     "founderLine": "I lead every project myself: 5+ years in development, my own AI chatbot engine and the website monitoring service Dumza.",
     "ctaPrimary": "Discuss your bot",
     "ctaSecondary": "See prices",
-    "calcLink": "Calculate how many customers you lose"
+    "calcLink": "Calculate how many customers you lose",
+    "view": { "label": "Site view", "classic": "Classic", "scene": "3D" }
   },
   "stats": {
     "label": "In brief",
