@@ -1,8 +1,9 @@
 "use client";
 
-import { useState, type ChangeEvent, type CSSProperties } from "react";
+import { useState, type CSSProperties } from "react";
 
 import { ButtonLink } from "@/components/ui/ButtonLink";
+import { RangeInput } from "@/components/ui/RangeInput";
 import { currencySymbol, formatPrice } from "@/constants/pricing";
 import { classNames } from "@/lib/classNames";
 
@@ -71,8 +72,7 @@ export function CalculatorWidget({ labels, locale, ctaHref }: CalculatorWidgetPr
   }
 
   function handleChange(key: FieldKey) {
-    return (event: ChangeEvent<HTMLInputElement>) =>
-      setValues((current) => ({ ...current, [key]: Number(event.target.value) }));
+    return (value: number) => setValues((current) => ({ ...current, [key]: value }));
   }
 
   return (
@@ -84,15 +84,14 @@ export function CalculatorWidget({ labels, locale, ctaHref }: CalculatorWidgetPr
               <span>{labels[key]}</span>
               <output className={styles.fieldValue}>{displayValue(key)}</output>
             </span>
-            <input
-              type="range"
+            <RangeInput
               className={styles.range}
               style={{ "--fill": `${fillPercent(key, values[key])}%` } as CSSProperties}
               min={FIELD_RANGES[key].min}
               max={FIELD_RANGES[key].max}
               step={FIELD_RANGES[key].step}
               value={values[key]}
-              onChange={handleChange(key)}
+              onValueChange={handleChange(key)}
             />
           </label>
         ))}

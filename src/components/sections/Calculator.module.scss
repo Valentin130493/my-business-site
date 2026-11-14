@@ -3,6 +3,7 @@
 $bar-thickness: 14px;
 $track-height: 6px;
 $thumb-size: 28px;
+$range-hit-height: 44px;
 
 .section {
   @include vars.section;
@@ -44,9 +45,11 @@ $thumb-size: 28px;
   }
 }
 
+// space-between — ползунки в ряду на одной линии, даже если подпись соседа в две строки
 .field {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: vars.$space-3;
   padding: vars.$space-5;
   border-radius: vars.$radius-sm;
@@ -85,15 +88,18 @@ $thumb-size: 28px;
 }
 
 // --fill задаёт виджет: доля шкалы слева от ползунка
-// margin-top: auto — ползунки в ряду на одной линии, даже если подпись соседа в две строки
+// --range-thumb-size читает touchSlide.ts, чтобы бегунок шёл точно под пальцем
+// Высота под палец (44px) уходит в отрицательные отступы — визуально ползунок на прежнем месте
 .range {
+  --range-thumb-size: #{$thumb-size};
   -webkit-appearance: none;
   appearance: none;
   width: 100%;
-  height: $thumb-size;
-  margin-top: auto;
+  height: $range-hit-height;
+  margin-block: calc((#{$thumb-size} - #{$range-hit-height}) / 2);
   background: transparent;
   cursor: pointer;
+  touch-action: pan-y;
 
   &::-webkit-slider-runnable-track {
     @include range-track;
