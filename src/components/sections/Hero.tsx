@@ -1,4 +1,5 @@
-import { getTranslations } from "next-intl/server";
+import type { ReactNode } from "react";
+import { getLocale, getTranslations } from "next-intl/server";
 
 import { buttonClassName } from "@/components/ui/Button";
 import { ButtonLink } from "@/components/ui/ButtonLink";
@@ -6,6 +7,7 @@ import { ContactMenu } from "@/components/ui/ContactMenu";
 import { Container } from "@/components/ui/Container";
 import { ViewModeSwitch } from "@/components/ui/ViewModeSwitch";
 import { CONTACT_OPTIONS } from "@/constants/contacts";
+import { formatPrice, PLAN_PRICES } from "@/constants/pricing";
 import {
   SECTION_ID_CALC,
   SECTION_ID_HERO,
@@ -14,22 +16,34 @@ import {
 } from "@/constants/sections";
 import { classNames } from "@/lib/classNames";
 
+import { AskBot, type AskBotItem } from "./AskBot";
 import { ChatDemo, type ChatMessage } from "./ChatDemo";
 import styles from "./Hero.module.scss";
 import styles3d from "./Hero.3d.module.scss";
 import stylesDark from "./Hero.dark.module.scss";
 import { PneumoTube } from "./PneumoTube";
 
+function askItemsWithPrices(items: AskBotItem[], locale: string): AskBotItem[] {
+  const botPrice = formatPrice(PLAN_PRICES.standard.amount, locale);
+  const startPrice = formatPrice(PLAN_PRICES.start.amount, locale);
+  return items.map((item) => ({
+    ...item,
+    answer: item.answer.replace("{botPrice}", botPrice).replace("{startPrice}", startPrice),
+  }));
+}
+
 export async function Hero() {
   const t = await getTranslations();
+  const locale = await getLocale();
   const headingId = headingIdOf(SECTION_ID_HERO);
   const messages = t.raw("chat.messages") as ChatMessage[];
+  const askItems = askItemsWithPrices(t.raw("hero.ask.items") as AskBotItem[], locale);
 
   return (
     <section
       id={SECTION_ID_HERO}
       aria-labelledby={headingId}
-      className={classNames(styles.section, styles3d.section)}
+      className={classNames(styles.section, styles3d.section, stylesDark.section)}
     >
       <Container className={classNames(styles.grid, styles3d.grid)}>
         <div>
@@ -43,10 +57,19 @@ export async function Hero() {
             />
           </div>
           <h1 id={headingId} className={styles.title}>
-            {t("hero.title")}
+            {t.rich("hero.title", {
+              mark: (chunks: ReactNode) => (
+                <span className={classNames(styles.mark, stylesDark.mark)}>{chunks}</span>
+              ),
+            })}
           </h1>
           <p className={styles.lead}>{t("hero.lead")}</p>
-          <p className={styles.founder}>{t("hero.founderLine")}</p>
+          <AskBot
+            status={t("hero.ask.status")}
+            title={t("hero.ask.title")}
+            items={askItems}
+            className={styles.ask}
+          />
           <div className={styles.buttons}>
             <ContactMenu
               label={t("hero.ctaPrimary")}
@@ -61,6 +84,7 @@ export async function Hero() {
           <a href={`#${SECTION_ID_CALC}`} className={classNames(styles.calcLink, stylesDark.calcLink)}>
             {t("hero.calcLink")}&nbsp;→
           </a>
+          <p className={styles.founder}>{t("hero.founderLine")}</p>
         </div>
 
         <PneumoTube

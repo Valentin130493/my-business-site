@@ -1,11 +1,17 @@
 @use "@/styles/variables" as vars;
 
-// Отступы — переменными: 3D-труба тянется на всю высоту секции, вычитая их
+// Отступы — переменными: 3D-труба тянется на всю высоту секции, вычитая их.
+// Первый экран мятный: приглушённый текст и линии затемнены под мятный фон.
+// Тёмная тема и 3D возвращают свои значения (Hero.dark / Hero.3d)
 .section {
   --hero-padding-top: #{vars.$space-10};
   --hero-padding-bottom: #{vars.$space-12};
+  --hero-surface: var(--color-mint);
+  --color-muted: #2f4e46;
+  --color-line: rgb(21 25 26 / 14%);
 
   padding-block: var(--hero-padding-top) var(--hero-padding-bottom);
+  background: var(--hero-surface);
   scroll-margin-top: vars.$navbar-height;
 
   @media (min-width: vars.$breakpoint-desktop) {
@@ -47,7 +53,7 @@
   display: inline-block;
   padding: vars.$space-1 vars.$space-3;
   border-radius: vars.$radius-pill;
-  background: var(--color-foam);
+  background: var(--color-paper);
   font-size: 0.875rem;
   font-weight: 600;
 }
@@ -55,6 +61,27 @@
 .title {
   @include entrance(1);
   margin-bottom: vars.$space-5;
+}
+
+// Ключевая фраза заголовка — «наклейка», которая прилепляется после появления заголовка
+.mark {
+  --mark-background: var(--color-ink);
+  --mark-color: var(--color-mint);
+
+  display: inline-block;
+  padding: 0 0.22em 0.06em;
+  border-radius: 0.2em;
+  background: var(--mark-background);
+  color: var(--mark-color);
+  transform: rotate(-2deg);
+  animation: stick 450ms var(--ease-out) 250ms both;
+}
+
+@keyframes stick {
+  from {
+    opacity: 0;
+    transform: rotate(-9deg) scale(1.2);
+  }
 }
 
 .lead {
@@ -65,16 +92,9 @@
   color: var(--color-muted);
 }
 
-.founder {
+.ask {
   @include entrance(3);
-  max-width: 40ch;
   margin-bottom: vars.$space-6;
-  padding: vars.$space-3 vars.$space-4;
-  border: 1px solid var(--color-line);
-  border-radius: vars.$radius-sm;
-  background: var(--color-paper);
-  font-size: 0.9375rem;
-  color: var(--color-muted);
 }
 
 .buttons {
@@ -91,6 +111,18 @@
   font-weight: 600;
   text-decoration: underline;
   text-underline-offset: 4px;
+}
+
+.founder {
+  @include entrance(6);
+  max-width: 40ch;
+  margin-top: vars.$space-6;
+  padding: vars.$space-3 vars.$space-4;
+  border: 1px solid var(--color-line);
+  border-radius: vars.$radius-sm;
+  background: var(--color-paper);
+  font-size: 0.9375rem;
+  color: var(--color-muted);
 }
 
 .tube {

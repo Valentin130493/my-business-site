@@ -2,8 +2,13 @@
 
 // Только раскладка 3D-сцены; цвета ночной темы — в styles/theme-dark.scss и Hero.dark.module.scss
 :global(:root[data-view="3d"]) {
-  // isolation: подсветка вокруг трубы (z-index: -1) остаётся над фоном секции
+  // isolation: подсветка вокруг трубы (z-index: -1) остаётся над фоном секции.
+  // Мятный фон и затемнённые под него токены в 3D не нужны — сцена ночная
   .section {
+    --hero-surface: transparent;
+    --color-muted: inherit;
+    --color-line: inherit;
+
     isolation: isolate;
   }
 

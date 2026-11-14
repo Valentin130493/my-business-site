@@ -1,0 +1,141 @@
+@use "@/styles/variables" as vars;
+
+.card {
+  max-width: 32rem;
+  padding: vars.$space-4;
+  border-radius: vars.$radius-lg;
+  background: var(--color-paper);
+  box-shadow: var(--shadow-soft);
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8125rem;
+  color: var(--color-muted);
+
+  &::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-online);
+  }
+}
+
+.title {
+  margin: 2px 0 vars.$space-3;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: vars.$space-2;
+}
+
+.chip {
+  min-height: 40px;
+  padding: 8px 12px;
+  border: 1.5px solid var(--color-mint);
+  border-radius: vars.$radius-pill;
+  background: var(--color-foam);
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.2;
+  transition:
+    background-color var(--duration-micro) var(--ease-out),
+    color var(--duration-micro) var(--ease-out),
+    transform var(--duration-micro) var(--ease-out);
+
+  &:active {
+    transform: scale(0.96);
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      background: var(--color-mint);
+      color: var(--color-on-mint);
+    }
+  }
+
+  &[aria-pressed="true"] {
+    border-color: var(--color-ink);
+    background: var(--color-ink);
+    color: var(--color-stone);
+  }
+}
+
+.dialog {
+  display: flex;
+  flex-direction: column;
+  gap: vars.$space-2;
+
+  &:not(:empty) {
+    margin-top: vars.$space-4;
+  }
+}
+
+.bubble {
+  max-width: 88%;
+  padding: 9px 13px;
+  border-radius: 16px;
+  font-size: 0.9375rem;
+  line-height: 1.45;
+  animation: pop 250ms var(--ease-out);
+}
+
+.visitor {
+  align-self: flex-end;
+  border-bottom-right-radius: 5px;
+  background: var(--color-ink);
+  color: var(--color-stone);
+}
+
+.bot,
+.typing {
+  align-self: flex-start;
+  border-bottom-left-radius: 5px;
+  background: var(--color-foam);
+}
+
+.typing {
+  display: flex;
+  gap: 4px;
+  padding: 12px 14px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
+
+  i {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--color-ink);
+    opacity: 0.35;
+    animation: blink 1s linear infinite;
+
+    &:nth-child(2) {
+      animation-delay: 0.15s;
+    }
+
+    &:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+  }
+}
+
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0.9;
+  }
+}

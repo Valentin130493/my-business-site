@@ -1,8 +1,27 @@
 @use "@/styles/variables" as vars;
 
+// Тёмная тема в обычном режиме: вместо мятного — глубокий бирюзовый, текст и линии — ночные.
+// В 3D фон задаёт Hero.3d (ночная сцена)
+.section {
+  @media (prefers-color-scheme: dark) {
+    :global(:root:not([data-view="3d"])) & {
+      --hero-surface: #0d2f28;
+      --color-muted: inherit;
+      --color-line: inherit;
+    }
+  }
+}
+
 .badge,
 .calcLink {
   @include vars.dark-theme {
     color: var(--color-mint);
+  }
+}
+
+.mark {
+  @include vars.dark-theme {
+    --mark-background: var(--color-mint);
+    --mark-color: var(--color-on-mint);
   }
 }

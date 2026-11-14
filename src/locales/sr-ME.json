@@ -24,14 +24,24 @@
     "languages": "Jezik sajta"
   },
   "hero": {
-    "title": "Gotovih botova ima na hiljade. Ja pravim jednog: za vaš biznis.",
+    "title": "Gotovih botova ima na hiljade. Ja pravim jednog: <mark>za vaš biznis.</mark>",
     "lead": "Odgovara vašim klijentima za nekoliko sekundi, danju i noću, zakazuje termine i prikuplja upite. Vi dobijate spremne klijente, a ne beskrajne poruke.",
     "badge": "AI chatbotovi za mali i srednji biznis",
     "founderLine": "Svaki projekat vodim lično: 5+ godina u razvoju, svoja platforma za AI chatbotove i servis za praćenje sajtova Dumza.",
     "ctaPrimary": "Razgovarajmo o botu",
     "ctaSecondary": "Pogledajte cijene",
     "calcLink": "Izračunajte koliko klijenata gubite",
-    "view": { "label": "Prikaz sajta", "classic": "Klasični", "scene": "3D" }
+    "view": { "label": "Prikaz sajta", "classic": "Klasični", "scene": "3D" },
+    "ask": {
+      "status": "Demo bot je na vezi",
+      "title": "Pitajte — odgovara odmah",
+      "items": [
+        { "question": "Koliko košta?", "answer": "Bot po principu ključ u ruke — od {botPrice}. Možete početi analizom biznisa za {startPrice}: taj iznos se uračunava ako naručite bota." },
+        { "question": "Odgovara li noću?", "answer": "Da, 24/7, bez neradnih dana: odgovara za nekoliko sekundi i prikuplja upit. Složena pitanja prosljeđuje vama." },
+        { "question": "Gdje radi?", "answer": "Na Telegramu, WhatsAppu, Instagramu, Messengeru i na sajtu — tamo gdje vam klijenti već pišu." },
+        { "question": "Koliko brzo kreće?", "answer": "Jednostavan bot za jedan messenger obično je gotov za najviše dvije nedjelje, uključujući testiranje." }
+      ]
+    }
   },
   "stats": {
     "label": "Ukratko",
