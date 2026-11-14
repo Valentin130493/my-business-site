@@ -5,8 +5,7 @@
 .section {
   @include vars.dark-theme {
     --color-on-dark: var(--color-ink);
-
-    background: var(--color-basalt);
+    --calc-surface: var(--color-basalt);
   }
 }
 

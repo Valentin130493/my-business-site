@@ -78,12 +78,20 @@ export function CalculatorWidget({ labels, locale, ctaHref }: CalculatorWidgetPr
   return (
     <div className={styles.widget}>
       <div className={styles.controls}>
-        <PressureGauge
-          value={result.lostRevenue}
-          locale={locale}
-          unit={`${currencySymbol(locale)} · ${labels.perMonth}`}
-          className={classNames(styles.gauge, styles3d.gauge)}
-        />
+        <div className={classNames(styles.readout, styles3d.readout)} aria-hidden="true">
+          <PressureGauge
+            value={result.lostRevenue}
+            locale={locale}
+            unit={`${currencySymbol(locale)} · ${labels.perMonth}`}
+            className={classNames(styles.gauge, styles3d.gauge)}
+          />
+          <p className={classNames(styles.readoutValue, styles3d.readoutValue)}>
+            <span className={styles.readoutLabel}>{labels.resultLabel}</span>
+            <span className={styles.readoutAmount}>
+              {formatPrice(result.lostRevenue, locale)} <span>{labels.perMonth}</span>
+            </span>
+          </p>
+        </div>
         <div className={styles.fields}>
           {FIELD_ORDER.map((key) => (
             <label key={key} className={styles.field}>

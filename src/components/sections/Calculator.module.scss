@@ -6,8 +6,10 @@ $thumb-size: 28px;
 $range-hit-height: 44px;
 
 .section {
+  --calc-surface: var(--color-ink);
+
   @include vars.section;
-  background: var(--color-ink);
+  background: var(--calc-surface);
   color: var(--color-on-dark);
 }
 
@@ -41,12 +43,59 @@ $range-hit-height: 44px;
   gap: vars.$space-3;
 }
 
+// Телефон: панель с итогом прилипает под шапкой, пока на экране ползунки, — сумму видно,
+// пока их тянешь. На планшете и десктопе ползунки и карточка с итогом и так на одном экране
+.readout {
+  position: sticky;
+  top: vars.$navbar-height;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: vars.$space-4;
+  width: 100vw;
+  margin-inline: calc(50% - 50vw);
+  padding: vars.$space-3 calc(50vw - 50%);
+  background: var(--calc-surface);
+  box-shadow: 0 14px 18px -14px rgb(0 0 0 / 70%);
+
+  @media (min-width: vars.$breakpoint-tablet) {
+    display: none;
+  }
+}
+
+.readoutValue {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.readoutLabel {
+  font-size: 0.8125rem;
+  color: var(--color-on-dark-muted);
+}
+
+.readoutAmount {
+  @include vars.display;
+  font-size: 1.75rem;
+  line-height: 1.1;
+  white-space: nowrap;
+
+  span {
+    font-family: vars.$font-family-base;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-on-dark-muted);
+  }
+}
+
+// На телефоне карточки плотнее, чтобы панель и все четыре ползунка помещались на один экран
 .fields {
   display: grid;
-  gap: vars.$space-3;
+  gap: vars.$space-2;
 
   @media (min-width: vars.$breakpoint-tablet) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: vars.$space-3;
   }
 }
 
@@ -55,10 +104,15 @@ $range-hit-height: 44px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: vars.$space-3;
-  padding: vars.$space-5;
+  gap: vars.$space-2;
+  padding: vars.$space-3 vars.$space-4;
   border-radius: vars.$radius-sm;
   background: var(--color-dark-panel);
+
+  @media (min-width: vars.$breakpoint-tablet) {
+    gap: vars.$space-3;
+    padding: vars.$space-5;
+  }
 }
 
 .fieldHead {
