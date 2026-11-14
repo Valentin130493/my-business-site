@@ -1,12 +1,21 @@
 @use "@/styles/variables" as vars;
 
+// Браузер Telegram на iOS рисует уже прокрученную страницу и выше своей рамки, под плашкой с адресом.
+// Шапка продлена вверх за край экрана сплошным фоном и закрывает эту полосу; в остальных браузерах
+// продолжение остаётся за экраном и не видно
+$header-overhang: 200px;
+
 .header {
   position: sticky;
-  top: 0;
+  top: -$header-overhang;
   z-index: 20;
+  margin-top: -$header-overhang;
+  padding-top: $header-overhang;
   border-bottom: 1px solid var(--color-line);
   background: rgba(244, 246, 245, 0.88);
-  background: color-mix(in srgb, var(--color-stone) 88%, transparent);
+  background:
+    linear-gradient(var(--color-stone), var(--color-stone)) top / 100% $header-overhang no-repeat,
+    color-mix(in srgb, var(--color-stone) 88%, transparent);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }

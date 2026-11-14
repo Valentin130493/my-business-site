@@ -36,6 +36,11 @@ $range-hit-height: 44px;
   }
 }
 
+.controls {
+  display: grid;
+  gap: vars.$space-3;
+}
+
 .fields {
   display: grid;
   gap: vars.$space-3;

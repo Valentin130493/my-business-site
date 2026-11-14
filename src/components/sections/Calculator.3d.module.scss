@@ -1,14 +1,28 @@
 @use "@/styles/variables" as vars;
 
-// Манометр есть только в 3D-режиме
+// Манометр есть только в 3D-режиме.
+// Телефон: полоса во всю ширину прилипает под шапкой, пока на экране ползунки, — стрелку видно,
+// пока их тянешь; после последнего ползунка уезжает вместе с ними.
+// Десктоп: над ползунками, всё и так на одном экране
 :global(:root[data-view="3d"]) {
   .gauge {
+    position: sticky;
+    top: vars.$navbar-height;
+    z-index: 1;
     display: block;
-    height: 220px;
-    margin: calc(-1 * #{vars.$space-4}) 0 vars.$space-2;
+    width: 100vw;
+    height: 190px;
+    margin-inline: calc(50% - 50vw);
+    background: linear-gradient(to bottom, var(--color-basalt) 80%, transparent);
 
     @media (min-width: vars.$breakpoint-desktop) {
+      position: relative;
+      top: auto;
+      z-index: auto;
+      width: auto;
       height: 260px;
+      margin-inline: 0;
+      background: none;
     }
   }
 }

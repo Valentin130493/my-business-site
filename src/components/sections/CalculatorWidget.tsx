@@ -77,33 +77,35 @@ export function CalculatorWidget({ labels, locale, ctaHref }: CalculatorWidgetPr
 
   return (
     <div className={styles.widget}>
-      <div className={styles.fields}>
-        {FIELD_ORDER.map((key) => (
-          <label key={key} className={styles.field}>
-            <span className={styles.fieldHead}>
-              <span>{labels[key]}</span>
-              <output className={styles.fieldValue}>{displayValue(key)}</output>
-            </span>
-            <RangeInput
-              className={styles.range}
-              style={{ "--fill": `${fillPercent(key, values[key])}%` } as CSSProperties}
-              min={FIELD_RANGES[key].min}
-              max={FIELD_RANGES[key].max}
-              step={FIELD_RANGES[key].step}
-              value={values[key]}
-              onValueChange={handleChange(key)}
-            />
-          </label>
-        ))}
-      </div>
-
-      <div className={classNames(styles.result, stylesDark.result)} aria-live="polite">
+      <div className={styles.controls}>
         <PressureGauge
           value={result.lostRevenue}
           locale={locale}
           unit={`${currencySymbol(locale)} · ${labels.perMonth}`}
           className={classNames(styles.gauge, styles3d.gauge)}
         />
+        <div className={styles.fields}>
+          {FIELD_ORDER.map((key) => (
+            <label key={key} className={styles.field}>
+              <span className={styles.fieldHead}>
+                <span>{labels[key]}</span>
+                <output className={styles.fieldValue}>{displayValue(key)}</output>
+              </span>
+              <RangeInput
+                className={styles.range}
+                style={{ "--fill": `${fillPercent(key, values[key])}%` } as CSSProperties}
+                min={FIELD_RANGES[key].min}
+                max={FIELD_RANGES[key].max}
+                step={FIELD_RANGES[key].step}
+                value={values[key]}
+                onValueChange={handleChange(key)}
+              />
+            </label>
+          ))}
+        </div>
+      </div>
+
+      <div className={classNames(styles.result, stylesDark.result)} aria-live="polite">
         <p className={styles.resultLabel}>{labels.resultLabel}</p>
         <p className={styles.resultValue}>
           {formatPrice(result.lostRevenue, locale)} <span>{labels.perMonth}</span>
