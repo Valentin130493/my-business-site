@@ -6,6 +6,7 @@ import { ButtonLink } from "@/components/ui/ButtonLink";
 import { ContactMenu } from "@/components/ui/ContactMenu";
 import { Container } from "@/components/ui/Container";
 import { ViewModeSwitch } from "@/components/ui/ViewModeSwitch";
+import { BOT_API_URL } from "@/constants/bot";
 import { CONTACT_OPTIONS } from "@/constants/contacts";
 import { formatPrice, PLAN_PRICES } from "@/constants/pricing";
 import {
@@ -16,7 +17,7 @@ import {
 } from "@/constants/sections";
 import { classNames } from "@/lib/classNames";
 
-import { AskBot, type AskBotItem } from "./AskBot";
+import { AskBot, type AskBotItem, type AskBotLiveTexts } from "./AskBot";
 import { ChatDemo, type ChatMessage } from "./ChatDemo";
 import styles from "./Hero.module.scss";
 import styles3d from "./Hero.3d.module.scss";
@@ -68,6 +69,8 @@ export async function Hero() {
             status={t("hero.ask.status")}
             title={t("hero.ask.title")}
             items={askItems}
+            liveUrl={BOT_API_URL || undefined}
+            live={t.raw("hero.ask.live") as AskBotLiveTexts}
             className={styles.ask}
           />
           <div className={styles.buttons}>

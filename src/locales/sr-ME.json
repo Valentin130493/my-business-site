@@ -40,7 +40,15 @@
         { "question": "Odgovara li noću?", "answer": "Da, 24/7, bez neradnih dana: odgovara za nekoliko sekundi i prikuplja upit. Složena pitanja prosljeđuje vama." },
         { "question": "Gdje radi?", "answer": "Na Telegramu, WhatsAppu, Instagramu, Messengeru i na sajtu — tamo gdje vam klijenti već pišu." },
         { "question": "Koliko brzo kreće?", "answer": "Jednostavan bot za jedan messenger obično je gotov za najviše dvije nedjelje, uključujući testiranje." }
-      ]
+      ],
+      "live": {
+        "placeholder": "Ili napišite svoje pitanje",
+        "send": "Pitaj",
+        "note": "Ovo je pravi bot na mom šablonu. Ne upisujte lične podatke.",
+        "offline": "Pravi bot trenutno nije dostupan. Pišite mi na Telegram ili Instagram, odgovoriću lično.",
+        "tooOften": "Previše poruka zaredom. Sačekajte minut i pitajte ponovo.",
+        "error": "Nešto nije u redu. Pokušajte ponovo ili mi pišite na Telegram."
+      }
     }
   },
   "stats": {

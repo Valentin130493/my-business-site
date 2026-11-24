@@ -40,7 +40,15 @@
         { "question": "At night too?", "answer": "Yes, 24/7 with no days off: it replies in seconds and collects the request. Tricky questions go to you." },
         { "question": "Where does it work?", "answer": "Telegram, WhatsApp, Instagram, Messenger and your website — wherever customers already message you." },
         { "question": "How fast is launch?", "answer": "A simple bot for one messenger usually takes up to two weeks, including testing." }
-      ]
+      ],
+      "live": {
+        "placeholder": "Or type your own question",
+        "send": "Ask",
+        "note": "This is a live bot built on my template. Please don’t share personal data here.",
+        "offline": "The live bot is unavailable right now. Message me on Telegram or Instagram and I’ll reply myself.",
+        "tooOften": "Too many messages in a row. Wait a minute and ask again.",
+        "error": "Something went wrong. Try again or message me on Telegram."
+      }
     }
   },
   "stats": {
